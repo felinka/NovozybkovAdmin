@@ -129,6 +129,7 @@ namespace NovGorAdmin
 			 StrQuarte = $@"Select  IdRep, FamU + ' ' + NameU + ' ' as FI, LogUsers.IdUser, TextRep, DateRep,  BoolCompl From LogUsers, ListUsers, RepLog Where LogUsers.IdUser = ListUsers.IdUser and RepLog.IdUser = LogUsers.IdUser and BoolCompl = 1 order by IdUser" + Usl;
 			SqlCommand Quarte12 = new SqlCommand(StrQuarte, Con);
 			SqlDataReader Res2 = Quarte12.ExecuteReader();
+
 			while (Res2.Read())
 			{
 				Messs Mess = new Messs();
