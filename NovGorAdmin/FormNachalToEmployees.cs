@@ -174,5 +174,75 @@ namespace NovGorAdmin
 
 
 		}
+
+		private void btnSend_Click(object sender, EventArgs e)
+		{
+			SqlConnection Con = new SqlConnection(Form1.TxtCon);
+			string FIW = "";
+
+			Con.Open();
+			int count = 0;
+			string StrQuarte1 = $@"SELECT     FamU + ' '+NameU+ ' '+ OtchU as 'FIO'   FROM         ListUsers WHERE     (IdUser = {tbxID.Text})";
+			SqlCommand Quarte11 = new SqlCommand(StrQuarte1, Con);
+			SqlDataReader Res1 = Quarte11.ExecuteReader();
+			while (Res1.Read())
+			{
+				//if (Res1["cnt"].ToString() != "0")
+				//	count++;
+
+				if (Res1.HasRows)
+				{
+					count++;
+					FIW = Res1["FIO"].ToString();
+				}
+					
+
+			}
+			Con.Close();
+
+
+
+			if (count <= 0)
+			{
+				MessageBox.Show("Пользователя с таким номером нет. Поверьте правильность номера и повторите попытку.", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
+			else
+			{
+				DialogResult res = MessageBox.Show($"Вы хотите призвать к себе {FIW.ToUpper()} ?", "Внимание!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+				if (res == DialogResult.Yes)
+				{
+
+
+					Con.Open();
+
+					string FIO = "";
+
+					string StrQuarte = $@"SELECT    FamU + ' '+NameU+ ' '+ OtchU as 'FIO' FROM         ListUsers WHERE     (IdUser = {Form1.IDU})";
+					SqlCommand Quarte1 = new SqlCommand(StrQuarte, Con);
+					SqlDataReader Res = Quarte1.ExecuteReader();
+					while (Res.Read())
+					{
+						FIO = "ОТ: " + Res["FIO"].ToString() + "    ТЕКСТ: ";
+					}
+					Con.Close();
+
+					Con.Open();
+					StrQuarte = $@"Insert into MessNachal (IdNach, IdPoluch, TextMess, DateMess) Values ({Form1.IDU}, {tbxID.Text}, '{tbxTextMess.Text}', GETDATE())";
+					SqlCommand Quarte12 = new SqlCommand(StrQuarte, Con);
+					Quarte12.ExecuteNonQuery();
+					Con.Close();
+
+					MessageBox.Show("Успешно отправлено!", "Готово!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
+			}
+
+
+			
+
+			
+			
+
+		}
 	}
 }

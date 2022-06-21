@@ -29,12 +29,35 @@ namespace NovGorAdmin
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
+			this.button1 = new System.Windows.Forms.Button();
+			this.SuspendLayout();
+			// 
+			// button1
+			// 
+			this.button1.BackColor = System.Drawing.Color.Khaki;
+			this.button1.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button1.Location = new System.Drawing.Point(519, 632);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(192, 41);
+			this.button1.TabIndex = 0;
+			this.button1.Text = "Добавить аккаунт";
+			this.button1.UseVisualStyleBackColor = false;
+			// 
+			// FormAddAc
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+			this.ClientSize = new System.Drawing.Size(1331, 697);
+			this.Controls.Add(this.button1);
+			this.Name = "FormAddAc";
 			this.Text = "FormAddAc";
+			this.ResumeLayout(false);
+
 		}
 
 		#endregion
+
+		private System.Windows.Forms.Button button1;
 	}
 }

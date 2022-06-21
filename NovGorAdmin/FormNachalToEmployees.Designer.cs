@@ -33,8 +33,8 @@ namespace NovGorAdmin
 			this.btnSend = new System.Windows.Forms.Button();
 			this.tbxTextMess = new System.Windows.Forms.TextBox();
 			this.lblF = new System.Windows.Forms.Label();
-			this.tbxID = new System.Windows.Forms.MaskedTextBox();
 			this.lblS = new System.Windows.Forms.Label();
+			this.tbxID = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
 			// MainPanel
@@ -59,6 +59,7 @@ namespace NovGorAdmin
 			this.btnSend.Text = "Отправить";
 			this.btnSend.UseVisualStyleBackColor = false;
 			this.btnSend.Visible = false;
+			this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
 			// 
 			// tbxTextMess
 			// 
@@ -81,16 +82,6 @@ namespace NovGorAdmin
 			this.lblF.Text = "Место для ввода текста сообщения:";
 			this.lblF.Visible = false;
 			// 
-			// tbxID
-			// 
-			this.tbxID.Location = new System.Drawing.Point(798, 650);
-			this.tbxID.Mask = "00000";
-			this.tbxID.Name = "tbxID";
-			this.tbxID.Size = new System.Drawing.Size(100, 22);
-			this.tbxID.TabIndex = 11;
-			this.tbxID.ValidatingType = typeof(int);
-			this.tbxID.Visible = false;
-			// 
 			// lblS
 			// 
 			this.lblS.AutoSize = true;
@@ -103,14 +94,22 @@ namespace NovGorAdmin
 			this.lblS.Text = "ID работника:";
 			this.lblS.Visible = false;
 			// 
+			// tbxID
+			// 
+			this.tbxID.Location = new System.Drawing.Point(796, 650);
+			this.tbxID.Multiline = true;
+			this.tbxID.Name = "tbxID";
+			this.tbxID.Size = new System.Drawing.Size(106, 32);
+			this.tbxID.TabIndex = 13;
+			// 
 			// FormNachalToEmployees
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
 			this.ClientSize = new System.Drawing.Size(1331, 697);
-			this.Controls.Add(this.lblS);
 			this.Controls.Add(this.tbxID);
+			this.Controls.Add(this.lblS);
 			this.Controls.Add(this.lblF);
 			this.Controls.Add(this.tbxTextMess);
 			this.Controls.Add(this.btnSend);
@@ -128,7 +127,7 @@ namespace NovGorAdmin
 		private System.Windows.Forms.Button btnSend;
 		private System.Windows.Forms.TextBox tbxTextMess;
 		private System.Windows.Forms.Label lblF;
-		private System.Windows.Forms.MaskedTextBox tbxID;
 		private System.Windows.Forms.Label lblS;
+		private System.Windows.Forms.TextBox tbxID;
 	}
 }

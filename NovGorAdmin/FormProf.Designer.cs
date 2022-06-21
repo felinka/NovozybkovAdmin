@@ -31,6 +31,8 @@ namespace NovGorAdmin
 		{
 			this.components = new System.ComponentModel.Container();
 			this.lblFIO = new System.Windows.Forms.Label();
+			this.bsUser = new System.Windows.Forms.BindingSource(this.components);
+			this.adminNovozybkovDataSet = new NovGorAdmin.AdminNovozybkovDataSet();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
@@ -50,8 +52,6 @@ namespace NovGorAdmin
 			this.label17 = new System.Windows.Forms.Label();
 			this.label18 = new System.Windows.Forms.Label();
 			this.label19 = new System.Windows.Forms.Label();
-			this.bsUser = new System.Windows.Forms.BindingSource(this.components);
-			this.adminNovozybkovDataSet = new NovGorAdmin.AdminNovozybkovDataSet();
 			this.listUsersTableAdapter = new NovGorAdmin.AdminNovozybkovDataSetTableAdapters.ListUsersTableAdapter();
 			((System.ComponentModel.ISupportInitialize)(this.bsUser)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.adminNovozybkovDataSet)).BeginInit();
@@ -69,6 +69,16 @@ namespace NovGorAdmin
 			this.lblFIO.TabIndex = 2;
 			this.lblFIO.Text = "T";
 			this.lblFIO.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// bsUser
+			// 
+			this.bsUser.DataMember = "ListUsers";
+			this.bsUser.DataSource = this.adminNovozybkovDataSet;
+			// 
+			// adminNovozybkovDataSet
+			// 
+			this.adminNovozybkovDataSet.DataSetName = "AdminNovozybkovDataSet";
+			this.adminNovozybkovDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
 			// label1
 			// 
@@ -285,21 +295,11 @@ namespace NovGorAdmin
 			this.label19.AutoSize = true;
 			this.label19.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-			this.label19.Location = new System.Drawing.Point(925, 9);
+			this.label19.Location = new System.Drawing.Point(1072, 14);
 			this.label19.Name = "label19";
 			this.label19.Size = new System.Drawing.Size(41, 28);
 			this.label19.TabIndex = 21;
 			this.label19.Text = "№:";
-			// 
-			// bsUser
-			// 
-			this.bsUser.DataMember = "ListUsers";
-			this.bsUser.DataSource = this.adminNovozybkovDataSet;
-			// 
-			// adminNovozybkovDataSet
-			// 
-			this.adminNovozybkovDataSet.DataSetName = "AdminNovozybkovDataSet";
-			this.adminNovozybkovDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
 			// listUsersTableAdapter
 			// 
@@ -310,7 +310,7 @@ namespace NovGorAdmin
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-			this.ClientSize = new System.Drawing.Size(1018, 540);
+			this.ClientSize = new System.Drawing.Size(1140, 540);
 			this.Controls.Add(this.label19);
 			this.Controls.Add(this.label18);
 			this.Controls.Add(this.label16);
