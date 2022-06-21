@@ -48,6 +48,7 @@ namespace NovGorAdmin
 				// 
 				// panel1
 				// 
+				this.Controls.Add(this.cbxBool);
 				this.Controls.Add(this.lblDate);
 				this.Controls.Add(this.lblText);
 				this.Controls.Add(this.lblFIO);
@@ -183,24 +184,65 @@ namespace NovGorAdmin
 
 					//----------------------------------------------------------------
 
-					if(Form1.Dolz == "начальник")
-					Item.lblFIO.Text = "!! "+LstMess[i].IdUserFIO;
-					else
+					//if(Form1.Dolz == "начальник")
+					//Item.lblFIO.Text = "!! "+LstMess[i].IdUserFIO;
+					//else
 						Item.lblFIO.Text = LstMess[i].IdUserFIO;
 					Item.lblDate.Text = LstMess[i].DateMess;
-				Item.lblText.Text = LstMess[i].TextMess;
-				if (LstMess[i].BoolComp == "1")
-				{
-					Item.cbxBool.Checked = true;
-				}
-				else
-				{
-					Item.cbxBool.Checked = true;
-				}
-				MainPanel.Controls.Add(Item);
+					Item.lblText.Text = LstMess[i].TextMess;
+					if (LstMess[i].BoolComp == "1")
+					{
+						Item.cbxBool.Checked = true;
+					}
+					else
+					{
+						Item.cbxBool.Checked = false;
+					}
+					MainPanel.Controls.Add(Item);
+
+					Item.cbxBool.CheckedChanged += CbxBool_CheckedChanged;
 				}
 			
+				
+		}
+		Items CurrentMess;
+		private void CbxBool_CheckedChanged(object sender, EventArgs e)
+		{
+			Items CurrentMess = (sender as Control).Parent as Items;
+			//CurrentMess.cbxBool.Checked = !CurrentMess.cbxBool.Checked;
 
+			if(CurrentMess.cbxBool.CheckState == CheckState.Checked)
+			{
+				CurrentMess.cbxBool.CheckState = CheckState.Unchecked;
+				CurrentMess.lblText.BackColor = Color.LemonChiffon;
+
+				SqlConnection Con = new SqlConnection(Form1.TxtCon);
+				Con.Open();
+
+				string IDRep = CurrentMess.IDMess;
+
+				string StrQuarte = $@"Update RepLog set BoolCompl = 0 Where IdRep = {IDRep}";
+				SqlCommand Quarte1 = new SqlCommand(StrQuarte, Con);
+				Quarte1.ExecuteNonQuery();
+				Con.Close();
+
+			}
+			else
+			{
+				CurrentMess.cbxBool.CheckState = CheckState.Checked;
+				CurrentMess.lblText.BackColor = Color.Gainsboro;
+
+				SqlConnection Con = new SqlConnection(Form1.TxtCon);
+				Con.Open();
+
+				string IDRep = CurrentMess.IDMess;
+
+				string StrQuarte = $@"Update RepLog set BoolCompl = 1 Where IdRep = {IDRep}";
+				SqlCommand Quarte1 = new SqlCommand(StrQuarte, Con);
+				Quarte1.ExecuteNonQuery();
+				Con.Close();
+
+			}
 		}
 	}
 }

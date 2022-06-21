@@ -149,7 +149,7 @@ namespace NovGorAdmin
 			this.iconButton3.FlatAppearance.BorderSize = 0;
 			this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.iconButton3.ForeColor = System.Drawing.Color.Gainsboro;
-			this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Paw;
+			this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.At;
 			this.iconButton3.IconColor = System.Drawing.Color.Gainsboro;
 			this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
 			this.iconButton3.IconSize = 32;
@@ -159,7 +159,7 @@ namespace NovGorAdmin
 			this.iconButton3.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
 			this.iconButton3.Size = new System.Drawing.Size(251, 60);
 			this.iconButton3.TabIndex = 2;
-			this.iconButton3.Text = "Какой-то раздел";
+			this.iconButton3.Text = "От Начальника";
 			this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.iconButton3.UseVisualStyleBackColor = true;
