@@ -37,11 +37,11 @@ namespace NovGorAdmin
 			this.MainPanel.AutoScroll = true;
 			this.MainPanel.ColumnCount = 1;
 			this.MainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-			this.MainPanel.Location = new System.Drawing.Point(12, 15);
+			this.MainPanel.Location = new System.Drawing.Point(12, 12);
 			this.MainPanel.Name = "MainPanel";
 			this.MainPanel.RowCount = 1;
 			this.MainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-			this.MainPanel.Size = new System.Drawing.Size(994, 513);
+			this.MainPanel.Size = new System.Drawing.Size(1097, 630);
 			this.MainPanel.TabIndex = 1;
 			// 
 			// FormMessForPr
@@ -49,7 +49,7 @@ namespace NovGorAdmin
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-			this.ClientSize = new System.Drawing.Size(1018, 540);
+			this.ClientSize = new System.Drawing.Size(1128, 583);
 			this.Controls.Add(this.MainPanel);
 			this.Name = "FormMessForPr";
 			this.Text = "Сообщения о помощи";

@@ -31,9 +31,10 @@ namespace NovGorAdmin
 		class Items : Panel
 		{
 			public System.Windows.Forms.Label lblDate;
-		
+			public System.Windows.Forms.CheckBox cbxBool;
 			public System.Windows.Forms.Label lblText;
 			public System.Windows.Forms.Label lblFIO;
+			
 			public string IDMess;
 
 			public Items()
@@ -41,6 +42,7 @@ namespace NovGorAdmin
 				this.lblText = new System.Windows.Forms.Label();
 				this.lblFIO = new System.Windows.Forms.Label();
 				this.lblDate = new System.Windows.Forms.Label();
+				this.cbxBool = new System.Windows.Forms.CheckBox();
 				//this.panel1.SuspendLayout();
 				//this.SuspendLayout();
 				// 
@@ -56,13 +58,13 @@ namespace NovGorAdmin
 				// 
 				// lblText
 				// 
-				this.lblText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+				this.lblText.BackColor = System.Drawing.Color.LemonChiffon;
 				this.lblText.Cursor = System.Windows.Forms.Cursors.IBeam;
 				this.lblText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 				this.lblText.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 				this.lblText.Location = new System.Drawing.Point(35, 32);
 				this.lblText.Name = "lblText";
-				this.lblText.Size = new System.Drawing.Size(734, 110);
+				this.lblText.Size = new System.Drawing.Size(590, 87);
 				this.lblText.TabIndex = 1;
 				this.lblText.Text = "label2";
 				// 
@@ -82,12 +84,24 @@ namespace NovGorAdmin
 				this.lblDate.AutoSize = true;
 				this.lblDate.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 				this.lblDate.ForeColor = System.Drawing.Color.Green;
-				this.lblDate.Location = new System.Drawing.Point(565, 3);
+				this.lblDate.Location = new System.Drawing.Point(426, 3);
 				this.lblDate.Name = "lblDate";
 				this.lblDate.Size = new System.Drawing.Size(59, 24);
 				this.lblDate.TabIndex = 2;
 				this.lblDate.Text = "label3";
-				
+				// 
+				// cbxBool
+				// 
+				this.cbxBool.AutoSize = true;
+				this.cbxBool.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+				this.cbxBool.ForeColor = System.Drawing.Color.Green;
+				this.cbxBool.Location = new System.Drawing.Point(516, 122);
+				this.cbxBool.Name = "cbxBool";
+				this.cbxBool.Size = new System.Drawing.Size(109, 23);
+				this.cbxBool.TabIndex = 3;
+				this.cbxBool.Text = "Выполнено";
+				this.cbxBool.UseVisualStyleBackColor = true;
+
 			}
 		}
 
@@ -174,9 +188,15 @@ namespace NovGorAdmin
 					else
 						Item.lblFIO.Text = LstMess[i].IdUserFIO;
 					Item.lblDate.Text = LstMess[i].DateMess;
-
 				Item.lblText.Text = LstMess[i].TextMess;
-
+				if (LstMess[i].BoolComp == "1")
+				{
+					Item.cbxBool.Checked = true;
+				}
+				else
+				{
+					Item.cbxBool.Checked = true;
+				}
 				MainPanel.Controls.Add(Item);
 				}
 			
