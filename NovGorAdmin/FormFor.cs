@@ -126,6 +126,7 @@ namespace NovGorAdmin
 		private void iconButton3_Click(object sender, EventArgs e)
 		{
 			ActivateButton(sender, RGBColors.color3);
+			OpenChildForm(new FormNachalToEmployees());
 		}
 
 		private void iconButton4_Click(object sender, EventArgs e)

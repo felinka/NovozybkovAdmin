@@ -64,6 +64,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAddAc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddAc.Designer.cs">
+      <DependentUpon>FormAddAc.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormFor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,12 @@
     </Compile>
     <Compile Include="FormMessForPr.Designer.cs">
       <DependentUpon>FormMessForPr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNachalToEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNachalToEmployees.Designer.cs">
+      <DependentUpon>FormNachalToEmployees.cs</DependentUpon>
     </Compile>
     <Compile Include="FormProf.cs">
       <SubType>Form</SubType>
@@ -101,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMessForPr.resx">
       <DependentUpon>FormMessForPr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNachalToEmployees.resx">
+      <DependentUpon>FormNachalToEmployees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormProf.resx">
       <DependentUpon>FormProf.cs</DependentUpon>

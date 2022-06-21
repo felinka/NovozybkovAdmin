@@ -128,13 +128,13 @@ namespace NovGorAdmin
 				IDU = Res["IdUser"].ToString();
 				Dolz = Res["Dolzh"].ToString();
 
-				if (Dolz == "0")
-				{
+				//if (Dolz == "0")
+				//{
 					FormFor frm = new FormFor();
 					this.Hide();
 					frm.ShowDialog();
 					frm.lblID.Text = IDU;
-				}
+				//}
 			}
 			else
 			{

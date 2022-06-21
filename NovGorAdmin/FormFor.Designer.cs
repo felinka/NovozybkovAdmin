@@ -74,7 +74,7 @@ namespace NovGorAdmin
 			this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panelMenu.Location = new System.Drawing.Point(0, 0);
 			this.panelMenu.Name = "panelMenu";
-			this.panelMenu.Size = new System.Drawing.Size(251, 715);
+			this.panelMenu.Size = new System.Drawing.Size(251, 829);
 			this.panelMenu.TabIndex = 1;
 			// 
 			// iconButton6
@@ -253,7 +253,7 @@ namespace NovGorAdmin
 			this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panelTitleBar.Location = new System.Drawing.Point(251, 0);
 			this.panelTitleBar.Name = "panelTitleBar";
-			this.panelTitleBar.Size = new System.Drawing.Size(1146, 80);
+			this.panelTitleBar.Size = new System.Drawing.Size(1349, 80);
 			this.panelTitleBar.TabIndex = 2;
 			this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
 			// 
@@ -318,7 +318,7 @@ namespace NovGorAdmin
 			this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panelShadow.Location = new System.Drawing.Point(251, 80);
 			this.panelShadow.Name = "panelShadow";
-			this.panelShadow.Size = new System.Drawing.Size(1146, 5);
+			this.panelShadow.Size = new System.Drawing.Size(1349, 5);
 			this.panelShadow.TabIndex = 3;
 			// 
 			// panelDesktop
@@ -331,7 +331,7 @@ namespace NovGorAdmin
 			this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panelDesktop.Location = new System.Drawing.Point(251, 85);
 			this.panelDesktop.Name = "panelDesktop";
-			this.panelDesktop.Size = new System.Drawing.Size(1146, 630);
+			this.panelDesktop.Size = new System.Drawing.Size(1349, 744);
 			this.panelDesktop.TabIndex = 4;
 			// 
 			// lblID
@@ -372,7 +372,7 @@ namespace NovGorAdmin
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel1.Location = new System.Drawing.Point(0, 0);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(5, 630);
+			this.panel1.Size = new System.Drawing.Size(5, 744);
 			this.panel1.TabIndex = 4;
 			// 
 			// FormFor
@@ -380,7 +380,7 @@ namespace NovGorAdmin
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.SeaGreen;
-			this.ClientSize = new System.Drawing.Size(1397, 715);
+			this.ClientSize = new System.Drawing.Size(1600, 829);
 			this.Controls.Add(this.panelDesktop);
 			this.Controls.Add(this.panelShadow);
 			this.Controls.Add(this.panelTitleBar);

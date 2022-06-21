@@ -41,9 +41,9 @@ namespace NovGorAdmin
 			this.tbxN = new System.Windows.Forms.TextBox();
 			this.tbxKabinet = new System.Windows.Forms.TextBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.rbtFL = new System.Windows.Forms.RadioButton();
-			this.rbtFP = new System.Windows.Forms.RadioButton();
 			this.rbtDr = new System.Windows.Forms.RadioButton();
+			this.rbtFP = new System.Windows.Forms.RadioButton();
+			this.rbtFL = new System.Windows.Forms.RadioButton();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.rbtSNP = new System.Windows.Forms.RadioButton();
 			this.rbtNPr = new System.Windows.Forms.RadioButton();
@@ -165,19 +165,17 @@ namespace NovGorAdmin
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Выберите нужное";
 			// 
-			// rbtFL
+			// rbtDr
 			// 
-			this.rbtFL.AutoSize = true;
-			this.rbtFL.Checked = true;
-			this.rbtFL.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.rbtFL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.rbtFL.Location = new System.Drawing.Point(17, 30);
-			this.rbtFL.Name = "rbtFL";
-			this.rbtFL.Size = new System.Drawing.Size(134, 23);
-			this.rbtFL.TabIndex = 0;
-			this.rbtFL.TabStop = true;
-			this.rbtFL.Text = "Забыл(а) логин";
-			this.rbtFL.UseVisualStyleBackColor = true;
+			this.rbtDr.AutoSize = true;
+			this.rbtDr.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.rbtDr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.rbtDr.Location = new System.Drawing.Point(17, 84);
+			this.rbtDr.Name = "rbtDr";
+			this.rbtDr.Size = new System.Drawing.Size(78, 23);
+			this.rbtDr.TabIndex = 2;
+			this.rbtDr.Text = "Другое";
+			this.rbtDr.UseVisualStyleBackColor = true;
 			// 
 			// rbtFP
 			// 
@@ -191,17 +189,19 @@ namespace NovGorAdmin
 			this.rbtFP.Text = "Забыл(а) пароль";
 			this.rbtFP.UseVisualStyleBackColor = true;
 			// 
-			// rbtDr
+			// rbtFL
 			// 
-			this.rbtDr.AutoSize = true;
-			this.rbtDr.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.rbtDr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.rbtDr.Location = new System.Drawing.Point(17, 84);
-			this.rbtDr.Name = "rbtDr";
-			this.rbtDr.Size = new System.Drawing.Size(78, 23);
-			this.rbtDr.TabIndex = 2;
-			this.rbtDr.Text = "Другое";
-			this.rbtDr.UseVisualStyleBackColor = true;
+			this.rbtFL.AutoSize = true;
+			this.rbtFL.Checked = true;
+			this.rbtFL.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.rbtFL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.rbtFL.Location = new System.Drawing.Point(17, 30);
+			this.rbtFL.Name = "rbtFL";
+			this.rbtFL.Size = new System.Drawing.Size(134, 23);
+			this.rbtFL.TabIndex = 0;
+			this.rbtFL.TabStop = true;
+			this.rbtFL.Text = "Забыл(а) логин";
+			this.rbtFL.UseVisualStyleBackColor = true;
 			// 
 			// groupBox2
 			// 
@@ -230,11 +230,10 @@ namespace NovGorAdmin
 			// 
 			this.rbtNPr.AutoSize = true;
 			this.rbtNPr.Checked = true;
-			this.rbtNPr.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.rbtNPr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.rbtNPr.Location = new System.Drawing.Point(9, 61);
 			this.rbtNPr.Name = "rbtNPr";
-			this.rbtNPr.Size = new System.Drawing.Size(161, 23);
+			this.rbtNPr.Size = new System.Drawing.Size(156, 21);
 			this.rbtNPr.TabIndex = 0;
 			this.rbtNPr.TabStop = true;
 			this.rbtNPr.Text = "Ввести № профиля";

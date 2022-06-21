@@ -213,7 +213,23 @@ namespace NovGorAdmin
 
 			if(CurrentMess.cbxBool.CheckState == CheckState.Checked)
 			{
-				CurrentMess.cbxBool.CheckState = CheckState.Unchecked;
+				
+
+
+				CurrentMess.lblText.BackColor = Color.Gainsboro;
+
+				SqlConnection Con = new SqlConnection(Form1.TxtCon);
+				Con.Open();
+
+				string IDRep = CurrentMess.IDMess;
+
+				string StrQuarte = $@"Update RepLog set BoolCompl = 1 Where IdRep = {IDRep}";
+				SqlCommand Quarte1 = new SqlCommand(StrQuarte, Con);
+				Quarte1.ExecuteNonQuery();
+				Con.Close();
+			}
+			else
+			{
 				CurrentMess.lblText.BackColor = Color.LemonChiffon;
 
 				SqlConnection Con = new SqlConnection(Form1.TxtCon);
@@ -226,21 +242,6 @@ namespace NovGorAdmin
 				Quarte1.ExecuteNonQuery();
 				Con.Close();
 
-			}
-			else
-			{
-				CurrentMess.cbxBool.CheckState = CheckState.Checked;
-				CurrentMess.lblText.BackColor = Color.Gainsboro;
-
-				SqlConnection Con = new SqlConnection(Form1.TxtCon);
-				Con.Open();
-
-				string IDRep = CurrentMess.IDMess;
-
-				string StrQuarte = $@"Update RepLog set BoolCompl = 1 Where IdRep = {IDRep}";
-				SqlCommand Quarte1 = new SqlCommand(StrQuarte, Con);
-				Quarte1.ExecuteNonQuery();
-				Con.Close();
 
 			}
 		}
