@@ -124,7 +124,7 @@ namespace NovGorAdmin
 					Mess.TextMess = Res["TextM"].ToString();
 
 					Mess.IdUserFIO ="Кому:"+" ID"+ Res["IdP"].ToString() + " " + Res["FI"].ToString();
-					Mess.DateMess = Res["DateM"].ToString();
+					Mess.DateMess = Res["DateM"].ToString().Substring(0,10);
 					Mess.IdRep = Res["IdMess"].ToString();
 					LstMess.Add(Mess);
 				}
@@ -148,14 +148,15 @@ namespace NovGorAdmin
 
 				//----------------------------------------------------------------
 
-				//if ()
-				//{
+				string DateN = DateTime.Now.ToString().Substring(0, 10);
+				if (LstMess[i].DateMess == DateN)
+				{
 					Item.lblText.BackColor = Color.LemonChiffon;
-				//}
-				//else if (int.Parse(LstMess[i].BoolComp) == 1)
-				//{
-				//	Item.lblText.BackColor = Color.Gainsboro;
-				//}
+				}
+				else 
+				{
+					Item.lblText.BackColor = Color.Gainsboro;
+				}
 
 
 				//----------------------------------------------------------------
@@ -234,6 +235,8 @@ namespace NovGorAdmin
 					Con.Close();
 
 					MessageBox.Show("Успешно отправлено!", "Готово!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					GetDateDB();
+					FillPanel();
 				}
 			}
 

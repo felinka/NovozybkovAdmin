@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace NovGorAdmin
 {
-	public partial class FormMessForPr : Form
+	public partial class FormForProgrammer : Form
 	{
-		public FormMessForPr()
+		public FormForProgrammer()
 		{
 			InitializeComponent();
 			GetDateDB();
@@ -31,10 +31,9 @@ namespace NovGorAdmin
 		class Items : Panel
 		{
 			public System.Windows.Forms.Label lblDate;
-			public System.Windows.Forms.CheckBox cbxBool;
 			public System.Windows.Forms.Label lblText;
 			public System.Windows.Forms.Label lblFIO;
-			
+
 			public string IDMess;
 
 			public Items()
@@ -42,13 +41,11 @@ namespace NovGorAdmin
 				this.lblText = new System.Windows.Forms.Label();
 				this.lblFIO = new System.Windows.Forms.Label();
 				this.lblDate = new System.Windows.Forms.Label();
-				this.cbxBool = new System.Windows.Forms.CheckBox();
 				//this.panel1.SuspendLayout();
 				//this.SuspendLayout();
 				// 
 				// panel1
 				// 
-				this.Controls.Add(this.cbxBool);
 				this.Controls.Add(this.lblDate);
 				this.Controls.Add(this.lblText);
 				this.Controls.Add(this.lblFIO);
@@ -93,15 +90,7 @@ namespace NovGorAdmin
 				// 
 				// cbxBool
 				// 
-				this.cbxBool.AutoSize = true;
-				this.cbxBool.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-				this.cbxBool.ForeColor = System.Drawing.Color.Green;
-				this.cbxBool.Location = new System.Drawing.Point(516, 122);
-				this.cbxBool.Name = "cbxBool";
-				this.cbxBool.Size = new System.Drawing.Size(109, 23);
-				this.cbxBool.TabIndex = 3;
-				this.cbxBool.Text = "Выполнено";
-				this.cbxBool.UseVisualStyleBackColor = true;
+				
 
 			}
 		}
@@ -118,7 +107,7 @@ namespace NovGorAdmin
 			//}
 
 
-			string StrQuarte = $@"Select  IdRep, FamU + ' ' + NameU + ' ' as FI, LogUsers.IdUser, TextRep, DateRep,  BoolCompl From LogUsers, ListUsers, RepLog Where LogUsers.IdUser = ListUsers.IdUser and RepLog.IdUser = LogUsers.IdUser and BoolCompl = 0 order by IdUser" + Usl;
+			string StrQuarte = $@"Select  IdRep, FamU + ' ' + NameU + ' ' as FI, LogUsers.IdUser, TextRep, DateRep,  BoolCompl From LogUsers, ListUsers, RepLog Where LogUsers.IdUser = ListUsers.IdUser and RepLog.IdUser = LogUsers.IdUser and BoolCompl = 0 and LogUsers.IdUser = {Form1.IDU} order by IdUser" + Usl;
 			SqlCommand Quarte1 = new SqlCommand(StrQuarte, Con);
 			SqlDataReader Res = Quarte1.ExecuteReader();
 			LstMess.Clear();
@@ -126,7 +115,7 @@ namespace NovGorAdmin
 			{
 				Messs Mess = new Messs();
 				Mess.TextMess = Res["TextRep"].ToString();
-				Mess.IdUserFIO = "ID:"+Res["IdUser"].ToString()+ " " + Res["FI"].ToString();
+				Mess.IdUserFIO = "ID:" + Res["IdUser"].ToString() + " " + Res["FI"].ToString();
 				Mess.DateMess = Res["DateRep"].ToString();
 				Mess.BoolComp = Res["BoolCompl"].ToString();
 				Mess.IdRep = Res["IdRep"].ToString();
@@ -141,7 +130,7 @@ namespace NovGorAdmin
 			//}
 
 
-			 StrQuarte = $@"Select  IdRep, FamU + ' ' + NameU + ' ' as FI, LogUsers.IdUser, TextRep, DateRep,  BoolCompl From LogUsers, ListUsers, RepLog Where LogUsers.IdUser = ListUsers.IdUser and RepLog.IdUser = LogUsers.IdUser and BoolCompl = 1 order by IdUser" + Usl;
+			StrQuarte = $@"Select  IdRep, FamU + ' ' + NameU + ' ' as FI, LogUsers.IdUser, TextRep, DateRep,  BoolCompl From LogUsers, ListUsers, RepLog Where LogUsers.IdUser = ListUsers.IdUser and RepLog.IdUser = LogUsers.IdUser and BoolCompl = 1 and LogUsers.IdUser = {Form1.IDU} order by IdUser" + Usl;
 			SqlCommand Quarte12 = new SqlCommand(StrQuarte, Con);
 			SqlDataReader Res2 = Quarte12.ExecuteReader();
 
@@ -165,85 +154,47 @@ namespace NovGorAdmin
 			MainPanel.AutoScrollPosition = new Point(
 	Math.Abs(MainPanel.AutoScrollPosition.X),
 	MainPanel.VerticalScroll.Maximum);
-				for (int i = NBegin; i < LstMess.Count; i++)
+			for (int i = NBegin; i < LstMess.Count; i++)
+			{
+				Items Item = new Items();
+				Item.IDMess = LstMess[i].IdRep;
+
+				//----------------------------------------------------------------
+
+				if (int.Parse(LstMess[i].BoolComp) == 0)
 				{
-					Items Item = new Items();
-					Item.IDMess = LstMess[i].IdRep;
-
-					//----------------------------------------------------------------
-
-					if (int.Parse(LstMess[i].BoolComp) == 0)
-					{
-						Item.lblText.BackColor = Color.LemonChiffon;
-					}
-					else if (int.Parse(LstMess[i].BoolComp) == 1)
-					{
-						Item.lblText.BackColor = Color.Gainsboro;
-					}
-					
-
-					//----------------------------------------------------------------
-
-					//if(Form1.Dolz == "начальник")
-					//Item.lblFIO.Text = "!! "+LstMess[i].IdUserFIO;
-					//else
-						Item.lblFIO.Text = LstMess[i].IdUserFIO;
-					Item.lblDate.Text = LstMess[i].DateMess;
-					Item.lblText.Text = LstMess[i].TextMess;
-					if (LstMess[i].BoolComp == "1")
-					{
-						Item.cbxBool.Checked = true;
-					}
-					else
-					{
-						Item.cbxBool.Checked = false;
-					}
-					MainPanel.Controls.Add(Item);
-
-					Item.cbxBool.CheckedChanged += CbxBool_CheckedChanged;
+					Item.lblText.BackColor = Color.LemonChiffon;
 				}
-			
+				else if (int.Parse(LstMess[i].BoolComp) == 1)
+				{
+					Item.lblText.BackColor = Color.Gainsboro;
+				}
+
+
+				//----------------------------------------------------------------
+
+				//if(Form1.Dolz == "начальник")
+				//Item.lblFIO.Text = "!! "+LstMess[i].IdUserFIO;
+				//else
+				Item.lblFIO.Text = LstMess[i].IdUserFIO;
+				Item.lblDate.Text = LstMess[i].DateMess;
+				Item.lblText.Text = LstMess[i].TextMess;
 				
+				MainPanel.Controls.Add(Item);
+			}
+
+
 		}
-		Items CurrentMess;
-		private void CbxBool_CheckedChanged(object sender, EventArgs e)
+
+		private void button1_Click(object sender, EventArgs e)
 		{
-			Items CurrentMess = (sender as Control).Parent as Items;
-			//CurrentMess.cbxBool.Checked = !CurrentMess.cbxBool.Checked;
+			SqlConnection Con = new SqlConnection(Form1.TxtCon);
+			Con.Open();
 
-			if(CurrentMess.cbxBool.CheckState == CheckState.Checked)
-			{
-				
-
-
-				CurrentMess.lblText.BackColor = Color.Gainsboro;
-
-				SqlConnection Con = new SqlConnection(Form1.TxtCon);
-				Con.Open();
-
-				string IDRep = CurrentMess.IDMess;
-
-				string StrQuarte = $@"Update RepLog set BoolCompl = 1 Where IdRep = {IDRep}";
-				SqlCommand Quarte1 = new SqlCommand(StrQuarte, Con);
-				Quarte1.ExecuteNonQuery();
-				Con.Close();
-			}
-			else
-			{
-				CurrentMess.lblText.BackColor = Color.LemonChiffon;
-
-				SqlConnection Con = new SqlConnection(Form1.TxtCon);
-				Con.Open();
-
-				string IDRep = CurrentMess.IDMess;
-
-				string StrQuarte = $@"Update RepLog set BoolCompl = 0 Where IdRep = {IDRep}";
-				SqlCommand Quarte1 = new SqlCommand(StrQuarte, Con);
-				Quarte1.ExecuteNonQuery();
-				Con.Close();
-
-
-			}
+			string StrQuarte = $@"Insert into RepLog (TextRep, DateRep, IdUser) Values ('{textBox1.Text}', GETDATE(), {Form1.IDU})";
+			SqlCommand Quarte1 = new SqlCommand(StrQuarte, Con);
+			Quarte1.ExecuteNonQuery();
+			Con.Close();
 			GetDateDB();
 			FillPanel();
 		}

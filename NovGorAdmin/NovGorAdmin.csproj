@@ -76,6 +76,12 @@
     <Compile Include="FormFor.Designer.cs">
       <DependentUpon>FormFor.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormForProgrammer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormForProgrammer.Designer.cs">
+      <DependentUpon>FormForProgrammer.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormHelpLog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,17 +94,35 @@
     <Compile Include="FormMessForPr.Designer.cs">
       <DependentUpon>FormMessForPr.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormNachal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNachal.Designer.cs">
+      <DependentUpon>FormNachal.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormNachalToEmployees.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormNachalToEmployees.Designer.cs">
       <DependentUpon>FormNachalToEmployees.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOtdelKadrov.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOtdelKadrov.Designer.cs">
+      <DependentUpon>FormOtdelKadrov.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormProf.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormProf.Designer.cs">
       <DependentUpon>FormProf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProfilesRabot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProfilesRabot.Designer.cs">
+      <DependentUpon>FormProfilesRabot.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -111,17 +135,29 @@
     <EmbeddedResource Include="FormFor.resx">
       <DependentUpon>FormFor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormForProgrammer.resx">
+      <DependentUpon>FormForProgrammer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormHelpLog.resx">
       <DependentUpon>FormHelpLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMessForPr.resx">
       <DependentUpon>FormMessForPr.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormNachal.resx">
+      <DependentUpon>FormNachal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormNachalToEmployees.resx">
       <DependentUpon>FormNachalToEmployees.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormOtdelKadrov.resx">
+      <DependentUpon>FormOtdelKadrov.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormProf.resx">
       <DependentUpon>FormProf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProfilesRabot.resx">
+      <DependentUpon>FormProfilesRabot.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
