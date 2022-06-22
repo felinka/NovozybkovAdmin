@@ -132,6 +132,7 @@ namespace NovGorAdmin
 		private void iconButton4_Click(object sender, EventArgs e)
 		{
 			ActivateButton(sender, RGBColors.color3);
+			OpenChildForm(new FormAddAc());
 		}
 
 		private void iconButton5_Click(object sender, EventArgs e)
