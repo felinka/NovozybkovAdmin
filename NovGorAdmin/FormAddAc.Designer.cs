@@ -55,32 +55,35 @@ namespace NovGorAdmin
 			// 
 			// tbxIdUs
 			// 
-			this.tbxIdUs.Location = new System.Drawing.Point(141, 102);
+			this.tbxIdUs.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.tbxIdUs.Location = new System.Drawing.Point(138, 112);
 			this.tbxIdUs.Name = "tbxIdUs";
-			this.tbxIdUs.Size = new System.Drawing.Size(209, 22);
+			this.tbxIdUs.Size = new System.Drawing.Size(209, 31);
 			this.tbxIdUs.TabIndex = 1;
 			// 
 			// tbxLoginU
 			// 
-			this.tbxLoginU.Location = new System.Drawing.Point(534, 102);
+			this.tbxLoginU.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.tbxLoginU.Location = new System.Drawing.Point(534, 112);
 			this.tbxLoginU.Name = "tbxLoginU";
-			this.tbxLoginU.Size = new System.Drawing.Size(217, 22);
+			this.tbxLoginU.Size = new System.Drawing.Size(217, 31);
 			this.tbxLoginU.TabIndex = 2;
 			// 
 			// tbxPassU
 			// 
-			this.tbxPassU.Location = new System.Drawing.Point(1008, 102);
+			this.tbxPassU.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.tbxPassU.Location = new System.Drawing.Point(1007, 112);
 			this.tbxPassU.Name = "tbxPassU";
-			this.tbxPassU.Size = new System.Drawing.Size(187, 22);
+			this.tbxPassU.Size = new System.Drawing.Size(187, 31);
 			this.tbxPassU.TabIndex = 3;
 			// 
 			// button2
 			// 
 			this.button2.BackColor = System.Drawing.Color.Khaki;
 			this.button2.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button2.Location = new System.Drawing.Point(154, 143);
+			this.button2.Location = new System.Drawing.Point(150, 157);
 			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(178, 31);
+			this.button2.Size = new System.Drawing.Size(178, 39);
 			this.button2.TabIndex = 5;
 			this.button2.Text = "Проверить";
 			this.button2.UseVisualStyleBackColor = false;
@@ -133,6 +136,7 @@ namespace NovGorAdmin
 			// cbxDolzh
 			// 
 			this.cbxDolzh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbxDolzh.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.cbxDolzh.FormattingEnabled = true;
 			this.cbxDolzh.Items.AddRange(new object[] {
             "Системный программист",
@@ -142,7 +146,7 @@ namespace NovGorAdmin
             "Другое"});
 			this.cbxDolzh.Location = new System.Drawing.Point(481, 318);
 			this.cbxDolzh.Name = "cbxDolzh";
-			this.cbxDolzh.Size = new System.Drawing.Size(333, 24);
+			this.cbxDolzh.Size = new System.Drawing.Size(333, 32);
 			this.cbxDolzh.TabIndex = 13;
 			// 
 			// FormAddAc

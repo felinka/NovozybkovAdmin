@@ -43,7 +43,10 @@ namespace NovGorAdmin
 			// TODO: данная строка кода позволяет загрузить данные в таблицу "adminNovozybkovDataSet.ListUsers". При необходимости она может быть перемещена или удалена.
 			this.listUsersTableAdapter.Fill(this.adminNovozybkovDataSet.ListUsers);
 			GetDateDB();
-			
+			if(Form1.Dolz == "1")
+			{
+				btnUvol.Visible = true;
+			}
 		}
 		void Upd()
 		{

@@ -104,6 +104,10 @@ Where ListUsers.IdUser = " + tbxIdUs.Text;
 			Con.Close();
 
 			MessageBox.Show($"Аккаунт успешно добавлен!", "Успех.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			Proverka = false;
+			tbxIdUs.Text = "";
+			tbxLoginU.Text = "";
+			tbxPassU.Text = "";
 		}
 	}
 }

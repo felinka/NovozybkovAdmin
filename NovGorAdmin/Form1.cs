@@ -143,6 +143,22 @@ namespace NovGorAdmin
 					frm.ShowDialog();
 					frm.lblID.Text = IDU;
 				}
+				else
+					if (Dolz == "2")
+				{
+					FormOtdelKadrov frm = new FormOtdelKadrov();
+					this.Hide();
+					frm.ShowDialog();
+					frm.lblID.Text = IDU;
+				}
+				else
+					if (Dolz == "3")
+				{
+					FormGlProekt frm = new FormGlProekt();
+					this.Hide();
+					frm.ShowDialog();
+					frm.lblID.Text = IDU;
+				}
 			}
 			else
 			{

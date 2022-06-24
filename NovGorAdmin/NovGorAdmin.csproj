@@ -70,6 +70,12 @@
     <Compile Include="FormAddAc.Designer.cs">
       <DependentUpon>FormAddAc.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAddProf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddProf.Designer.cs">
+      <DependentUpon>FormAddProf.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormFor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,12 @@
     </Compile>
     <Compile Include="FormForProgrammer.Designer.cs">
       <DependentUpon>FormForProgrammer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGlProekt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGlProekt.Designer.cs">
+      <DependentUpon>FormGlProekt.cs</DependentUpon>
     </Compile>
     <Compile Include="FormHelpLog.cs">
       <SubType>Form</SubType>
@@ -132,11 +144,17 @@
     <EmbeddedResource Include="FormAddAc.resx">
       <DependentUpon>FormAddAc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAddProf.resx">
+      <DependentUpon>FormAddProf.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormFor.resx">
       <DependentUpon>FormFor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormForProgrammer.resx">
       <DependentUpon>FormForProgrammer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGlProekt.resx">
+      <DependentUpon>FormGlProekt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormHelpLog.resx">
       <DependentUpon>FormHelpLog.cs</DependentUpon>

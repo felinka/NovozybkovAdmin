@@ -101,6 +101,7 @@ namespace NovGorAdmin
 			this.tbxID.Name = "tbxID";
 			this.tbxID.Size = new System.Drawing.Size(106, 32);
 			this.tbxID.TabIndex = 13;
+			this.tbxID.Visible = false;
 			// 
 			// FormNachalToEmployees
 			// 

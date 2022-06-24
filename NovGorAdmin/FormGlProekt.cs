@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace NovGorAdmin
 {
-	public partial class FormOtdelKadrov : Form
+	public partial class FormGlProekt : Form
 	{
-		public FormOtdelKadrov()
+		public FormGlProekt()
 		{
 			InitializeComponent();
 
@@ -29,22 +29,11 @@ namespace NovGorAdmin
 		}
 
 
-		private void BtnMin_Click(object sender, EventArgs e)
-		{
-			WindowState = FormWindowState.Minimized;
-		}
-
-		private void btnExit_Click(object sender, EventArgs e)
-		{
-			Application.Exit();
-		}
-
-
-
 		//Поля
 		private IconButton currentBtn;
 		private Panel leftBorderBtn;
 		private Form currentChildForm;
+
 		private struct RGBColors
 		{
 			public static Color color1 = Color.FromArgb(172, 126, 241);
@@ -118,16 +107,21 @@ namespace NovGorAdmin
 
 		}
 
-		private void iconButton7_Click(object sender, EventArgs e)
-		{
-			ActivateButton(sender, RGBColors.color3);
-			OpenChildForm(new FormProfilesRabot());
-		}
-
 		private void iconButton1_Click(object sender, EventArgs e)
 		{
 			ActivateButton(sender, RGBColors.color3);
 			OpenChildForm(new FormProf());
+		}
+		//Drag Form
+		[DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+		private extern static void ReleaseCapture();
+
+		[DllImport("user32.DLL", EntryPoint = "SendMessage")]
+		private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+		private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
+		{
+			ReleaseCapture();
+			SendMessage(this.Handle, 0x112, 0xf012, 0);
 		}
 
 		private void iconButton2_Click(object sender, EventArgs e)
@@ -141,25 +135,5 @@ namespace NovGorAdmin
 			ActivateButton(sender, RGBColors.color3);
 			OpenChildForm(new FormNachalToEmployees());
 		}
-
-
-		[DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-		private extern static void ReleaseCapture();
-
-		[DllImport("user32.DLL", EntryPoint = "SendMessage")]
-		private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
-		private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
-		{
-			ReleaseCapture();
-			SendMessage(this.Handle, 0x112, 0xf012, 0);
-		}
-
-		private void iconButton4_Click(object sender, EventArgs e)
-		{
-			ActivateButton(sender, RGBColors.color3);
-			OpenChildForm(new FormAddProf());
-		}
 	}
-	
 }

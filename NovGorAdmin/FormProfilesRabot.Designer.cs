@@ -32,6 +32,8 @@ namespace NovGorAdmin
 			this.components = new System.ComponentModel.Container();
 			this.label19 = new System.Windows.Forms.Label();
 			this.label18 = new System.Windows.Forms.Label();
+			this.bsUsers = new System.Windows.Forms.BindingSource(this.components);
+			this.adminNovozybkovDataSet = new NovGorAdmin.AdminNovozybkovDataSet();
 			this.label16 = new System.Windows.Forms.Label();
 			this.label17 = new System.Windows.Forms.Label();
 			this.label14 = new System.Windows.Forms.Label();
@@ -55,12 +57,10 @@ namespace NovGorAdmin
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.button1 = new System.Windows.Forms.Button();
 			this.label4 = new System.Windows.Forms.Label();
-			this.adminNovozybkovDataSet = new NovGorAdmin.AdminNovozybkovDataSet();
-			this.bsUsers = new System.Windows.Forms.BindingSource(this.components);
 			this.listUsersTableAdapter = new NovGorAdmin.AdminNovozybkovDataSetTableAdapters.ListUsersTableAdapter();
-			this.button2 = new System.Windows.Forms.Button();
-			((System.ComponentModel.ISupportInitialize)(this.adminNovozybkovDataSet)).BeginInit();
+			this.btnUvol = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.bsUsers)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.adminNovozybkovDataSet)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// label19
@@ -85,6 +85,16 @@ namespace NovGorAdmin
 			this.label18.Size = new System.Drawing.Size(50, 28);
 			this.label18.TabIndex = 40;
 			this.label18.Text = "пол";
+			// 
+			// bsUsers
+			// 
+			this.bsUsers.DataMember = "ListUsers";
+			this.bsUsers.DataSource = this.adminNovozybkovDataSet;
+			// 
+			// adminNovozybkovDataSet
+			// 
+			this.adminNovozybkovDataSet.DataSetName = "AdminNovozybkovDataSet";
+			this.adminNovozybkovDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
 			// 
 			// label16
 			// 
@@ -354,31 +364,22 @@ namespace NovGorAdmin
 			this.label4.TabIndex = 47;
 			this.label4.Text = "№:";
 			// 
-			// adminNovozybkovDataSet
-			// 
-			this.adminNovozybkovDataSet.DataSetName = "AdminNovozybkovDataSet";
-			this.adminNovozybkovDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
-			// bsUsers
-			// 
-			this.bsUsers.DataMember = "ListUsers";
-			this.bsUsers.DataSource = this.adminNovozybkovDataSet;
-			// 
 			// listUsersTableAdapter
 			// 
 			this.listUsersTableAdapter.ClearBeforeFill = true;
 			// 
-			// button2
+			// btnUvol
 			// 
-			this.button2.BackColor = System.Drawing.Color.Khaki;
-			this.button2.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button2.Location = new System.Drawing.Point(24, 16);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(126, 34);
-			this.button2.TabIndex = 48;
-			this.button2.Text = "Уволить";
-			this.button2.UseVisualStyleBackColor = false;
-			this.button2.Click += new System.EventHandler(this.button2_Click);
+			this.btnUvol.BackColor = System.Drawing.Color.Khaki;
+			this.btnUvol.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnUvol.Location = new System.Drawing.Point(24, 16);
+			this.btnUvol.Name = "btnUvol";
+			this.btnUvol.Size = new System.Drawing.Size(126, 34);
+			this.btnUvol.TabIndex = 48;
+			this.btnUvol.Text = "Уволить";
+			this.btnUvol.UseVisualStyleBackColor = false;
+			this.btnUvol.Visible = false;
+			this.btnUvol.Click += new System.EventHandler(this.button2_Click);
 			// 
 			// FormProfilesRabot
 			// 
@@ -386,7 +387,7 @@ namespace NovGorAdmin
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
 			this.ClientSize = new System.Drawing.Size(1344, 678);
-			this.Controls.Add(this.button2);
+			this.Controls.Add(this.btnUvol);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.textBox1);
@@ -415,8 +416,8 @@ namespace NovGorAdmin
 			this.Name = "FormProfilesRabot";
 			this.Text = "Профили работников";
 			this.Load += new System.EventHandler(this.FormProfilesRabot_Load);
-			((System.ComponentModel.ISupportInitialize)(this.adminNovozybkovDataSet)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.bsUsers)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.adminNovozybkovDataSet)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -452,6 +453,6 @@ namespace NovGorAdmin
 		private AdminNovozybkovDataSet adminNovozybkovDataSet;
 		private System.Windows.Forms.BindingSource bsUsers;
 		private AdminNovozybkovDataSetTableAdapters.ListUsersTableAdapter listUsersTableAdapter;
-		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Button btnUvol;
 	}
 }
