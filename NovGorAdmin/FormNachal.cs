@@ -154,5 +154,11 @@ namespace NovGorAdmin
 			ReleaseCapture();
 			SendMessage(this.Handle, 0x112, 0xf012, 0);
 		}
+
+		private void iconButton5_Click(object sender, EventArgs e)
+		{
+			ActivateButton(sender, RGBColors.color3);
+			OpenChildForm(new FormProjects());
+		}
 	}
 }

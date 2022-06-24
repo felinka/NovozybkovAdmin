@@ -32,31 +32,30 @@ namespace NovGorAdmin
 			this.panelDesktop = new System.Windows.Forms.Panel();
 			this.lblID = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
-			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.panelShadow = new System.Windows.Forms.Panel();
 			this.panelTitleBar = new System.Windows.Forms.Panel();
+			this.lblTitleChildForm = new System.Windows.Forms.Label();
+			this.panelMenu = new System.Windows.Forms.Panel();
+			this.panelLogo = new System.Windows.Forms.Panel();
+			this.label1 = new System.Windows.Forms.Label();
+			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.BtnMin = new FontAwesome.Sharp.IconPictureBox();
 			this.btnExit = new FontAwesome.Sharp.IconPictureBox();
-			this.lblTitleChildForm = new System.Windows.Forms.Label();
 			this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
-			this.panelMenu = new System.Windows.Forms.Panel();
-			this.iconButton5 = new FontAwesome.Sharp.IconButton();
 			this.iconButton4 = new FontAwesome.Sharp.IconButton();
 			this.iconButton3 = new FontAwesome.Sharp.IconButton();
 			this.iconButton2 = new FontAwesome.Sharp.IconButton();
 			this.iconButton1 = new FontAwesome.Sharp.IconButton();
-			this.panelLogo = new System.Windows.Forms.Panel();
-			this.label1 = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panelDesktop.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			this.panelTitleBar.SuspendLayout();
+			this.panelMenu.SuspendLayout();
+			this.panelLogo.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.BtnMin)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
-			this.panelMenu.SuspendLayout();
-			this.panelLogo.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -70,7 +69,7 @@ namespace NovGorAdmin
 			this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panelDesktop.Location = new System.Drawing.Point(251, 85);
 			this.panelDesktop.Name = "panelDesktop";
-			this.panelDesktop.Size = new System.Drawing.Size(1354, 631);
+			this.panelDesktop.Size = new System.Drawing.Size(1354, 699);
 			this.panelDesktop.TabIndex = 8;
 			// 
 			// lblID
@@ -95,23 +94,13 @@ namespace NovGorAdmin
 			this.label3.TabIndex = 7;
 			this.label3.Text = "Сейчас: ";
 			// 
-			// pictureBox2
-			// 
-			this.pictureBox2.Image = global::NovGorAdmin.Properties.Resources.flagNVZ;
-			this.pictureBox2.Location = new System.Drawing.Point(415, 96);
-			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(211, 100);
-			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox2.TabIndex = 5;
-			this.pictureBox2.TabStop = false;
-			// 
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(130)))), ((int)(((byte)(88)))));
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel1.Location = new System.Drawing.Point(0, 0);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(5, 631);
+			this.panel1.Size = new System.Drawing.Size(5, 699);
 			this.panel1.TabIndex = 4;
 			// 
 			// panelShadow
@@ -137,6 +126,64 @@ namespace NovGorAdmin
 			this.panelTitleBar.TabIndex = 6;
 			this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
 			// 
+			// lblTitleChildForm
+			// 
+			this.lblTitleChildForm.AutoSize = true;
+			this.lblTitleChildForm.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblTitleChildForm.ForeColor = System.Drawing.Color.Khaki;
+			this.lblTitleChildForm.Location = new System.Drawing.Point(64, 30);
+			this.lblTitleChildForm.Name = "lblTitleChildForm";
+			this.lblTitleChildForm.Size = new System.Drawing.Size(58, 19);
+			this.lblTitleChildForm.TabIndex = 1;
+			this.lblTitleChildForm.Text = "Начало";
+			// 
+			// panelMenu
+			// 
+			this.panelMenu.BackColor = System.Drawing.Color.SeaGreen;
+			this.panelMenu.Controls.Add(this.iconButton4);
+			this.panelMenu.Controls.Add(this.iconButton3);
+			this.panelMenu.Controls.Add(this.iconButton2);
+			this.panelMenu.Controls.Add(this.iconButton1);
+			this.panelMenu.Controls.Add(this.panelLogo);
+			this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
+			this.panelMenu.Location = new System.Drawing.Point(0, 0);
+			this.panelMenu.Name = "panelMenu";
+			this.panelMenu.Size = new System.Drawing.Size(251, 784);
+			this.panelMenu.TabIndex = 5;
+			// 
+			// panelLogo
+			// 
+			this.panelLogo.Controls.Add(this.label1);
+			this.panelLogo.Controls.Add(this.pictureBox1);
+			this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panelLogo.Location = new System.Drawing.Point(0, 0);
+			this.panelLogo.Name = "panelLogo";
+			this.panelLogo.Size = new System.Drawing.Size(251, 161);
+			this.panelLogo.TabIndex = 0;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.label1.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.ForeColor = System.Drawing.Color.Khaki;
+			this.label1.Location = new System.Drawing.Point(32, 72);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(121, 57);
+			this.label1.TabIndex = 1;
+			this.label1.Text = "Новозыбковская \r\nгородская \r\nадминистрация\r\n";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// pictureBox2
+			// 
+			this.pictureBox2.Image = global::NovGorAdmin.Properties.Resources.flagNVZ;
+			this.pictureBox2.Location = new System.Drawing.Point(415, 96);
+			this.pictureBox2.Name = "pictureBox2";
+			this.pictureBox2.Size = new System.Drawing.Size(211, 100);
+			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox2.TabIndex = 5;
+			this.pictureBox2.TabStop = false;
+			// 
 			// BtnMin
 			// 
 			this.BtnMin.BackColor = System.Drawing.Color.SeaGreen;
@@ -150,6 +197,7 @@ namespace NovGorAdmin
 			this.BtnMin.Size = new System.Drawing.Size(32, 29);
 			this.BtnMin.TabIndex = 3;
 			this.BtnMin.TabStop = false;
+			this.BtnMin.Click += new System.EventHandler(this.BtnMin_Click);
 			// 
 			// btnExit
 			// 
@@ -164,17 +212,7 @@ namespace NovGorAdmin
 			this.btnExit.Size = new System.Drawing.Size(32, 29);
 			this.btnExit.TabIndex = 2;
 			this.btnExit.TabStop = false;
-			// 
-			// lblTitleChildForm
-			// 
-			this.lblTitleChildForm.AutoSize = true;
-			this.lblTitleChildForm.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblTitleChildForm.ForeColor = System.Drawing.Color.Khaki;
-			this.lblTitleChildForm.Location = new System.Drawing.Point(64, 30);
-			this.lblTitleChildForm.Name = "lblTitleChildForm";
-			this.lblTitleChildForm.Size = new System.Drawing.Size(58, 19);
-			this.lblTitleChildForm.TabIndex = 1;
-			this.lblTitleChildForm.Text = "Начало";
+			this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
 			// 
 			// iconCurrentChildForm
 			// 
@@ -189,42 +227,6 @@ namespace NovGorAdmin
 			this.iconCurrentChildForm.Size = new System.Drawing.Size(47, 40);
 			this.iconCurrentChildForm.TabIndex = 0;
 			this.iconCurrentChildForm.TabStop = false;
-			// 
-			// panelMenu
-			// 
-			this.panelMenu.BackColor = System.Drawing.Color.SeaGreen;
-			this.panelMenu.Controls.Add(this.iconButton5);
-			this.panelMenu.Controls.Add(this.iconButton4);
-			this.panelMenu.Controls.Add(this.iconButton3);
-			this.panelMenu.Controls.Add(this.iconButton2);
-			this.panelMenu.Controls.Add(this.iconButton1);
-			this.panelMenu.Controls.Add(this.panelLogo);
-			this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-			this.panelMenu.Location = new System.Drawing.Point(0, 0);
-			this.panelMenu.Name = "panelMenu";
-			this.panelMenu.Size = new System.Drawing.Size(251, 716);
-			this.panelMenu.TabIndex = 5;
-			// 
-			// iconButton5
-			// 
-			this.iconButton5.Dock = System.Windows.Forms.DockStyle.Top;
-			this.iconButton5.FlatAppearance.BorderSize = 0;
-			this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.iconButton5.ForeColor = System.Drawing.Color.Gainsboro;
-			this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.Splotch;
-			this.iconButton5.IconColor = System.Drawing.Color.Gainsboro;
-			this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-			this.iconButton5.IconSize = 32;
-			this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.iconButton5.Location = new System.Drawing.Point(0, 401);
-			this.iconButton5.Name = "iconButton5";
-			this.iconButton5.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-			this.iconButton5.Size = new System.Drawing.Size(251, 60);
-			this.iconButton5.TabIndex = 4;
-			this.iconButton5.Text = "Статус идей";
-			this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.iconButton5.UseVisualStyleBackColor = true;
 			// 
 			// iconButton4
 			// 
@@ -246,6 +248,7 @@ namespace NovGorAdmin
 			this.iconButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.iconButton4.UseVisualStyleBackColor = true;
+			this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
 			// 
 			// iconButton3
 			// 
@@ -313,29 +316,6 @@ namespace NovGorAdmin
 			this.iconButton1.UseVisualStyleBackColor = true;
 			this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
 			// 
-			// panelLogo
-			// 
-			this.panelLogo.Controls.Add(this.label1);
-			this.panelLogo.Controls.Add(this.pictureBox1);
-			this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panelLogo.Location = new System.Drawing.Point(0, 0);
-			this.panelLogo.Name = "panelLogo";
-			this.panelLogo.Size = new System.Drawing.Size(251, 161);
-			this.panelLogo.TabIndex = 0;
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.label1.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.ForeColor = System.Drawing.Color.Khaki;
-			this.label1.Location = new System.Drawing.Point(32, 72);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(121, 57);
-			this.label1.TabIndex = 1;
-			this.label1.Text = "Новозыбковская \r\nгородская \r\nадминистрация\r\n";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
 			// pictureBox1
 			// 
 			this.pictureBox1.Image = global::NovGorAdmin.Properties.Resources.flagNVZ;
@@ -350,7 +330,7 @@ namespace NovGorAdmin
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1605, 716);
+			this.ClientSize = new System.Drawing.Size(1605, 784);
 			this.Controls.Add(this.panelDesktop);
 			this.Controls.Add(this.panelShadow);
 			this.Controls.Add(this.panelTitleBar);
@@ -361,15 +341,15 @@ namespace NovGorAdmin
 			this.Text = "FormGlProekt";
 			this.panelDesktop.ResumeLayout(false);
 			this.panelDesktop.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			this.panelTitleBar.ResumeLayout(false);
 			this.panelTitleBar.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.BtnMin)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
 			this.panelMenu.ResumeLayout(false);
 			this.panelLogo.ResumeLayout(false);
 			this.panelLogo.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.BtnMin)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 
@@ -389,7 +369,6 @@ namespace NovGorAdmin
 		private System.Windows.Forms.Label lblTitleChildForm;
 		private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
 		private System.Windows.Forms.Panel panelMenu;
-		private FontAwesome.Sharp.IconButton iconButton5;
 		private FontAwesome.Sharp.IconButton iconButton4;
 		private FontAwesome.Sharp.IconButton iconButton3;
 		private FontAwesome.Sharp.IconButton iconButton2;

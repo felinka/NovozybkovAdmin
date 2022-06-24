@@ -135,5 +135,21 @@ namespace NovGorAdmin
 			ActivateButton(sender, RGBColors.color3);
 			OpenChildForm(new FormNachalToEmployees());
 		}
+
+		private void iconButton4_Click(object sender, EventArgs e)
+		{
+			ActivateButton(sender, RGBColors.color3);
+			OpenChildForm(new FormProjects());
+		}
+
+		private void btnExit_Click(object sender, EventArgs e)
+		{
+			Application.Exit();
+		}
+
+		private void BtnMin_Click(object sender, EventArgs e)
+		{
+			WindowState = FormWindowState.Minimized;
+		}
 	}
 }
