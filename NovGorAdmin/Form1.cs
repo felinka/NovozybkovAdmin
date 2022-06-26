@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
+using System.Net;
+using System.Net.Mail;
+
 using System.Runtime.InteropServices;
 using FontAwesome.Sharp;
 using System.Data.SqlClient;
@@ -114,19 +117,29 @@ namespace NovGorAdmin
 		public static string IDU = "", Dolz = "";
 		private void button1_Click_1(object sender, EventArgs e)
 		{
+			if(textBox1.Text == "")
+			{
+				MessageBox.Show("Запросите код авторизации и введите его. Найти можно на вашем почтовом ящике e-mail.");
+				return;
+			}
+
 			string TxtQuery = $"Select* from LogUsers where LoginU = '{tbxLog.Text}' and PassU = '{tbxPass.Text}' ";
 			SqlConnection Con = new SqlConnection(TxtCon);
 			SqlCommand Quey1 = new SqlCommand(TxtQuery, Con);
 			Con.Open();
 			Quey1 = new SqlCommand(TxtQuery, Con);
-			SqlDataReader Res = null;
-			Res = Quey1.ExecuteReader();
+			SqlDataReader Res  = Quey1.ExecuteReader();
 
 			if (Res.HasRows)
 			{
 				Res.Read();
 				IDU = Res["IdUser"].ToString();
 				Dolz = Res["Dolzh"].ToString();
+				if(textBox1.Text != Res["ePass"].ToString())
+				{
+					MessageBox.Show($"Код авторизации неверный. Проверьте его и повторите попытку снова.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					return;
+				}
 
 				if (Dolz == "0")
 				{
@@ -159,6 +172,7 @@ namespace NovGorAdmin
 					frm.ShowDialog();
 					frm.lblID.Text = IDU;
 				}
+
 			}
 			else
 			{
@@ -205,6 +219,73 @@ namespace NovGorAdmin
 			iconCurrentChildForm.IconChar = IconChar.Home;
 			iconCurrentChildForm.IconColor = Color.Khaki;
 			lblTitleChildForm.Text = "Авторизация";
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			
+
+			if (tbxLog.Text == "" || tbxPass.Text == "")
+			{
+				MessageBox.Show("Введите поля Логина и Пароля");
+				return;
+			}
+			string TxtQuery = $"Select* from LogUsers where LoginU = '{tbxLog.Text}' and PassU = '{tbxPass.Text}' ";
+			SqlConnection Con = new SqlConnection(TxtCon);
+			SqlCommand Quey1 = new SqlCommand(TxtQuery, Con);
+			Con.Open();
+			Quey1 = new SqlCommand(TxtQuery, Con);
+			SqlDataReader Res = null;
+			Res = Quey1.ExecuteReader();
+			string MAIL = "";
+			string dt = "";
+			int ID = 0, BW = 1 ;
+			if (Res.HasRows)
+			{
+				Res.Read();
+				MAIL = Res["Email"].ToString();
+				dt = Res["DateOfLogin"].ToString();
+				ID = int.Parse(Res["IdUser"].ToString());
+				BW = int.Parse(Res["BoolWork"].ToString());
+			}
+			Con.Close();
+
+			if(BW == 0)
+			{
+				MessageBox.Show("Пошёл нахуй отсюда, ты вообще-то уволен");
+				return;
+			}
+			if(dt.Substring(0, 10) == DateTime.Now.ToString().Substring(0,10))
+			{
+				MessageBox.Show("Вы можете войти с кодом, который приходил сегодня.");
+				return;
+			}
+
+			MailAddress fromAdress = new MailAddress("novozybkovadm@mail.ru");
+
+			MailAddress toAdress = new MailAddress(MAIL);
+			Random rnd = new Random();
+			string ePass = rnd.Next(1, 10).ToString()+ rnd.Next(1, 10).ToString()+ rnd.Next(1, 10).ToString()+ rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString();
+
+			TxtQuery = $@"Update LogUsers set ePass ='{ePass}' , DateOfLogin = GETDATE() where IdUser = {ID}";
+			Con.Open();
+			SqlCommand Quey11 = new SqlCommand(TxtQuery, Con);
+			Quey11.ExecuteNonQuery();
+			Con.Close();
+
+			MailMessage mess = new MailMessage(fromAdress, toAdress);
+			mess.Body = $"Ваш код авторизации: {ePass}";
+			mess.Subject = $"Вход в программу";
+
+			SmtpClient client = new SmtpClient();
+			client.Host = "smtp.mail.ru";
+			client.Port = 587; // Обратите внимание что порт 587
+			client.EnableSsl = true;
+			client.Credentials = new NetworkCredential("novozybkovadm@mail.ru", "Eq9lC4YbGlJdGM2xdCpT");
+
+			client.Send(mess);
+
+			MessageBox.Show("Сообщение отправлено. Если не видите его, проверьте папку Спам.");
 		}
 
 		private void pictureBox1_Click(object sender, EventArgs e)
