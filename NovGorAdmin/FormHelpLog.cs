@@ -95,12 +95,12 @@ namespace NovGorAdmin
 			else if (f == true)
 			{
 				string TxtQuery = "";
-				if (rbtP.Checked)
+				if (rbtL.Checked)
 				{
 					TxtQuery = $"Select* from LogUsers where LoginU = '{tbxPL.Text}' and Email = '{tbxM.Text}' and ePass = '{tbxK.Text}'";
 				}
 				else
-					if (rbtL.Checked)
+					if (rbtP.Checked)
 				{
 					TxtQuery = $"Select* from LogUsers where PassU = '{tbxPL.Text}' and Email = '{tbxM.Text}' and ePass = '{tbxK.Text}'";
 				}
@@ -122,22 +122,27 @@ namespace NovGorAdmin
 						s += symb[rnd.Next(0, symb.Length)];
 					}
 
+					string b = "";
+
 					if(rbtL.Checked)
 					{
-						TxtQuery = $@"Update LogUsers set PassU ='{s}' , DateOfLogin = GETDATE() where IdUser = {ID}";
+						TxtQuery = $@"Update LogUsers set PassU ='{s}', DateOfLogin = GETDATE() where IdUser = {ID}";
 						Con.Open();
 						SqlCommand Quey11 = new SqlCommand(TxtQuery, Con);
 						Quey11.ExecuteNonQuery();
 						Con.Close();
+						b = $"Ваш новый пароль: {s}";
 					}	
 					else
 						if(rbtP.Checked)
 					{
-						TxtQuery = $@"Update LogUsers set LoginU ='{s}' , DateOfLogin = GETDATE() where IdUser = {ID}";
+						TxtQuery = $@"Update LogUsers set LoginU ='{s}', DateOfLogin = GETDATE() where IdUser = {ID}";
 						Con.Open();
 						SqlCommand Quey11 = new SqlCommand(TxtQuery, Con);
 						Quey11.ExecuteNonQuery();
 						Con.Close();
+
+						b = $"Ваш новый логин: {s}";
 					}
 					
 
@@ -146,7 +151,7 @@ namespace NovGorAdmin
 					MailAddress toAdress = new MailAddress(tbxM.Text);
 
 					MailMessage mess = new MailMessage(fromAdress, toAdress);
-					mess.Body = $"Ваш новый пароль: {s}";
+					mess.Body =b;
 					mess.Subject = $"Восстановление доступа в программу";
 
 					SmtpClient client = new SmtpClient();

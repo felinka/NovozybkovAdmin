@@ -26,6 +26,11 @@ namespace NovGorAdmin
 		public FormFor()
 		{
 			InitializeComponent();
+
+			lblT.Text = "";
+			timer1.Enabled = true;
+			timer1.Interval = 1000;
+
 			leftBorderBtn = new Panel();
 			leftBorderBtn.Size = new Size(7, 60);
 			panelMenu.Controls.Add(leftBorderBtn);
@@ -181,6 +186,11 @@ namespace NovGorAdmin
 		private void BtnMin_Click(object sender, EventArgs e)
 		{
 			WindowState = FormWindowState.Minimized;
+		}
+
+		private void timer1_Tick(object sender, EventArgs e)
+		{
+			lblT.Text = DateTime.Now.ToLongTimeString();
 		}
 	}
 }

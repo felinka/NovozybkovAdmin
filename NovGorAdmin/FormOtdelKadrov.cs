@@ -18,6 +18,11 @@ namespace NovGorAdmin
 		{
 			InitializeComponent();
 
+
+			lblT.Text = "";
+			timer1.Enabled = true;
+			timer1.Interval = 1000;
+
 			leftBorderBtn = new Panel();
 			leftBorderBtn.Size = new Size(7, 60);
 			panelMenu.Controls.Add(leftBorderBtn);
@@ -159,6 +164,11 @@ namespace NovGorAdmin
 		{
 			ActivateButton(sender, RGBColors.color3);
 			OpenChildForm(new FormAddProf());
+		}
+
+		private void timer1_Tick(object sender, EventArgs e)
+		{
+			lblT.Text = DateTime.Now.ToLongTimeString();
 		}
 	}
 	

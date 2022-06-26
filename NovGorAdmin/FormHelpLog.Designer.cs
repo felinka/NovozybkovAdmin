@@ -33,10 +33,10 @@ namespace NovGorAdmin
 			this.tbxM = new System.Windows.Forms.TextBox();
 			this.button1 = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.rbtP = new System.Windows.Forms.RadioButton();
+			this.rbtL = new System.Windows.Forms.RadioButton();
 			this.tbxPL = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.rbtL = new System.Windows.Forms.RadioButton();
-			this.rbtP = new System.Windows.Forms.RadioButton();
 			this.tbxK = new System.Windows.Forms.TextBox();
 			this.lblK = new System.Windows.Forms.Label();
 			this.groupBox1.SuspendLayout();
@@ -81,10 +81,34 @@ namespace NovGorAdmin
 			this.groupBox1.Controls.Add(this.rbtL);
 			this.groupBox1.Location = new System.Drawing.Point(704, 240);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(200, 100);
+			this.groupBox1.Size = new System.Drawing.Size(254, 100);
 			this.groupBox1.TabIndex = 24;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "выберите, что ввести";
+			// 
+			// rbtP
+			// 
+			this.rbtP.AutoSize = true;
+			this.rbtP.Location = new System.Drawing.Point(21, 63);
+			this.rbtP.Name = "rbtP";
+			this.rbtP.Size = new System.Drawing.Size(78, 21);
+			this.rbtP.TabIndex = 1;
+			this.rbtP.Text = "Пароль";
+			this.rbtP.UseVisualStyleBackColor = true;
+			this.rbtP.CheckedChanged += new System.EventHandler(this.rbtP_CheckedChanged);
+			// 
+			// rbtL
+			// 
+			this.rbtL.AutoSize = true;
+			this.rbtL.Checked = true;
+			this.rbtL.Location = new System.Drawing.Point(21, 30);
+			this.rbtL.Name = "rbtL";
+			this.rbtL.Size = new System.Drawing.Size(68, 21);
+			this.rbtL.TabIndex = 0;
+			this.rbtL.TabStop = true;
+			this.rbtL.Text = "Логин";
+			this.rbtL.UseVisualStyleBackColor = true;
+			this.rbtL.CheckedChanged += new System.EventHandler(this.rbtL_CheckedChanged);
 			// 
 			// tbxPL
 			// 
@@ -103,30 +127,6 @@ namespace NovGorAdmin
 			this.label1.Size = new System.Drawing.Size(188, 26);
 			this.label1.TabIndex = 25;
 			this.label1.Text = "Введите ваш логин\r\n";
-			// 
-			// rbtL
-			// 
-			this.rbtL.AutoSize = true;
-			this.rbtL.Checked = true;
-			this.rbtL.Location = new System.Drawing.Point(21, 30);
-			this.rbtL.Name = "rbtL";
-			this.rbtL.Size = new System.Drawing.Size(68, 21);
-			this.rbtL.TabIndex = 0;
-			this.rbtL.TabStop = true;
-			this.rbtL.Text = "Логин";
-			this.rbtL.UseVisualStyleBackColor = true;
-			this.rbtL.CheckedChanged += new System.EventHandler(this.rbtL_CheckedChanged);
-			// 
-			// rbtP
-			// 
-			this.rbtP.AutoSize = true;
-			this.rbtP.Location = new System.Drawing.Point(21, 63);
-			this.rbtP.Name = "rbtP";
-			this.rbtP.Size = new System.Drawing.Size(78, 21);
-			this.rbtP.TabIndex = 1;
-			this.rbtP.Text = "Пароль";
-			this.rbtP.UseVisualStyleBackColor = true;
-			this.rbtP.CheckedChanged += new System.EventHandler(this.rbtP_CheckedChanged);
 			// 
 			// tbxK
 			// 

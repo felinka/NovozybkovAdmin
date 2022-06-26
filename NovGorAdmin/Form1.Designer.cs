@@ -30,6 +30,11 @@ namespace NovGorAdmin
 		private void InitializeComponent()
 		{
 			this.panelDesktop = new System.Windows.Forms.Panel();
+			this.button2 = new System.Windows.Forms.Button();
+			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.label3 = new System.Windows.Forms.Label();
+			this.tbxPass = new System.Windows.Forms.TextBox();
+			this.label2 = new System.Windows.Forms.Label();
 			this.tbxLog = new System.Windows.Forms.TextBox();
 			this.lblLog = new System.Windows.Forms.Label();
 			this.button1 = new System.Windows.Forms.Button();
@@ -45,11 +50,7 @@ namespace NovGorAdmin
 			this.panelLogo = new System.Windows.Forms.Panel();
 			this.label1 = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.tbxPass = new System.Windows.Forms.TextBox();
-			this.label2 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.label3 = new System.Windows.Forms.Label();
-			this.button2 = new System.Windows.Forms.Button();
+			this.iconButton2 = new FontAwesome.Sharp.IconButton();
 			this.panelDesktop.SuspendLayout();
 			this.panelTitleBar.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -77,6 +78,57 @@ namespace NovGorAdmin
 			this.panelDesktop.Name = "panelDesktop";
 			this.panelDesktop.Size = new System.Drawing.Size(1047, 634);
 			this.panelDesktop.TabIndex = 8;
+			// 
+			// button2
+			// 
+			this.button2.BackColor = System.Drawing.Color.Khaki;
+			this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+			this.button2.FlatAppearance.BorderSize = 0;
+			this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+			this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
+			this.button2.Location = new System.Drawing.Point(418, 323);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(144, 30);
+			this.button2.TabIndex = 16;
+			this.button2.Text = "Запросить";
+			this.button2.UseVisualStyleBackColor = false;
+			this.button2.Click += new System.EventHandler(this.button2_Click);
+			// 
+			// textBox1
+			// 
+			this.textBox1.Location = new System.Drawing.Point(365, 295);
+			this.textBox1.Name = "textBox1";
+			this.textBox1.Size = new System.Drawing.Size(245, 22);
+			this.textBox1.TabIndex = 15;
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label3.ForeColor = System.Drawing.Color.Green;
+			this.label3.Location = new System.Drawing.Point(420, 252);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(130, 26);
+			this.label3.TabIndex = 14;
+			this.label3.Text = "Код из e-mail";
+			// 
+			// tbxPass
+			// 
+			this.tbxPass.Location = new System.Drawing.Point(365, 209);
+			this.tbxPass.Name = "tbxPass";
+			this.tbxPass.Size = new System.Drawing.Size(245, 22);
+			this.tbxPass.TabIndex = 13;
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.ForeColor = System.Drawing.Color.Green;
+			this.label2.Location = new System.Drawing.Point(445, 166);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(81, 26);
+			this.label2.TabIndex = 12;
+			this.label2.Text = "Пароль";
 			// 
 			// tbxLog
 			// 
@@ -201,6 +253,7 @@ namespace NovGorAdmin
 			// panelMenu
 			// 
 			this.panelMenu.BackColor = System.Drawing.Color.SeaGreen;
+			this.panelMenu.Controls.Add(this.iconButton2);
 			this.panelMenu.Controls.Add(this.iconButton1);
 			this.panelMenu.Controls.Add(this.panelLogo);
 			this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -265,56 +318,27 @@ namespace NovGorAdmin
 			this.pictureBox1.TabStop = false;
 			this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
 			// 
-			// tbxPass
+			// iconButton2
 			// 
-			this.tbxPass.Location = new System.Drawing.Point(365, 209);
-			this.tbxPass.Name = "tbxPass";
-			this.tbxPass.Size = new System.Drawing.Size(245, 22);
-			this.tbxPass.TabIndex = 13;
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.ForeColor = System.Drawing.Color.Green;
-			this.label2.Location = new System.Drawing.Point(445, 166);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(81, 26);
-			this.label2.TabIndex = 12;
-			this.label2.Text = "Пароль";
-			// 
-			// textBox1
-			// 
-			this.textBox1.Location = new System.Drawing.Point(365, 295);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(245, 22);
-			this.textBox1.TabIndex = 15;
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.ForeColor = System.Drawing.Color.Green;
-			this.label3.Location = new System.Drawing.Point(420, 252);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(130, 26);
-			this.label3.TabIndex = 14;
-			this.label3.Text = "Код из e-mail";
-			// 
-			// button2
-			// 
-			this.button2.BackColor = System.Drawing.Color.Khaki;
-			this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-			this.button2.FlatAppearance.BorderSize = 0;
-			this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-			this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
-			this.button2.Location = new System.Drawing.Point(418, 323);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(144, 30);
-			this.button2.TabIndex = 16;
-			this.button2.Text = "Запросить";
-			this.button2.UseVisualStyleBackColor = false;
-			this.button2.Click += new System.EventHandler(this.button2_Click);
+			this.iconButton2.Dock = System.Windows.Forms.DockStyle.Top;
+			this.iconButton2.FlatAppearance.BorderSize = 0;
+			this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.iconButton2.ForeColor = System.Drawing.Color.Gainsboro;
+			this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Hotel;
+			this.iconButton2.IconColor = System.Drawing.Color.Gainsboro;
+			this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.iconButton2.IconSize = 32;
+			this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.iconButton2.Location = new System.Drawing.Point(0, 221);
+			this.iconButton2.Name = "iconButton2";
+			this.iconButton2.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+			this.iconButton2.Size = new System.Drawing.Size(258, 60);
+			this.iconButton2.TabIndex = 1;
+			this.iconButton2.Text = "Авторизация";
+			this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.iconButton2.UseVisualStyleBackColor = true;
+			this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
 			// 
 			// Form1
 			// 
@@ -369,6 +393,7 @@ namespace NovGorAdmin
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.TextBox tbxPass;
 		private System.Windows.Forms.Label label2;
+		private FontAwesome.Sharp.IconButton iconButton2;
 	}
 }
 

@@ -12,9 +12,14 @@ using System.Windows.Forms;
 
 namespace NovGorAdmin
 {
-	public partial class FormGlProekt : Form
+	public partial class FormOthers : Form
 	{
-		public FormGlProekt()
+
+		//Поля
+		private IconButton currentBtn;
+		private Panel leftBorderBtn;
+		private Form currentChildForm;
+		public FormOthers()
 		{
 			InitializeComponent();
 
@@ -30,13 +35,10 @@ namespace NovGorAdmin
 			this.ControlBox = false;
 			this.DoubleBuffered = true;
 			this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
+			
 		}
 
-
-		//Поля
-		private IconButton currentBtn;
-		private Panel leftBorderBtn;
-		private Form currentChildForm;
 
 		private struct RGBColors
 		{
@@ -116,17 +118,6 @@ namespace NovGorAdmin
 			ActivateButton(sender, RGBColors.color3);
 			OpenChildForm(new FormProf());
 		}
-		//Drag Form
-		[DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-		private extern static void ReleaseCapture();
-
-		[DllImport("user32.DLL", EntryPoint = "SendMessage")]
-		private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-		private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
-		{
-			ReleaseCapture();
-			SendMessage(this.Handle, 0x112, 0xf012, 0);
-		}
 
 		private void iconButton2_Click(object sender, EventArgs e)
 		{
@@ -140,10 +131,17 @@ namespace NovGorAdmin
 			OpenChildForm(new FormNachalToEmployees());
 		}
 
-		private void iconButton4_Click(object sender, EventArgs e)
+		//Drag Form
+		[DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+		private extern static void ReleaseCapture();
+
+		[DllImport("user32.DLL", EntryPoint = "SendMessage")]
+		private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+		private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
 		{
-			ActivateButton(sender, RGBColors.color3);
-			OpenChildForm(new FormProjects());
+			ReleaseCapture();
+			SendMessage(this.Handle, 0x112, 0xf012, 0);
 		}
 
 		private void btnExit_Click(object sender, EventArgs e)
@@ -159,6 +157,21 @@ namespace NovGorAdmin
 		private void timer1_Tick(object sender, EventArgs e)
 		{
 			lblT.Text = DateTime.Now.ToLongTimeString();
+		}
+
+		private void pictureBox1_Click(object sender, EventArgs e)
+		{
+			currentChildForm.Close();
+			Reset();
+		}
+
+		private void Reset()
+		{
+			DisableButton();
+			leftBorderBtn.Visible = false;
+			iconCurrentChildForm.IconChar = IconChar.Home;
+			iconCurrentChildForm.IconColor = Color.Khaki;
+			lblTitleChildForm.Text = "Начало";
 		}
 	}
 }

@@ -29,9 +29,8 @@ namespace NovGorAdmin
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.panelMenu = new System.Windows.Forms.Panel();
-			this.iconButton6 = new FontAwesome.Sharp.IconButton();
-			this.iconButton5 = new FontAwesome.Sharp.IconButton();
 			this.iconButton4 = new FontAwesome.Sharp.IconButton();
 			this.iconButton3 = new FontAwesome.Sharp.IconButton();
 			this.iconButton2 = new FontAwesome.Sharp.IconButton();
@@ -47,9 +46,11 @@ namespace NovGorAdmin
 			this.panelShadow = new System.Windows.Forms.Panel();
 			this.panelDesktop = new System.Windows.Forms.Panel();
 			this.lblID = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.timer1 = new System.Windows.Forms.Timer(this.components);
+			this.lblT = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
 			this.panelMenu.SuspendLayout();
 			this.panelLogo.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -64,8 +65,6 @@ namespace NovGorAdmin
 			// panelMenu
 			// 
 			this.panelMenu.BackColor = System.Drawing.Color.SeaGreen;
-			this.panelMenu.Controls.Add(this.iconButton6);
-			this.panelMenu.Controls.Add(this.iconButton5);
 			this.panelMenu.Controls.Add(this.iconButton4);
 			this.panelMenu.Controls.Add(this.iconButton3);
 			this.panelMenu.Controls.Add(this.iconButton2);
@@ -76,50 +75,6 @@ namespace NovGorAdmin
 			this.panelMenu.Name = "panelMenu";
 			this.panelMenu.Size = new System.Drawing.Size(251, 829);
 			this.panelMenu.TabIndex = 1;
-			// 
-			// iconButton6
-			// 
-			this.iconButton6.Dock = System.Windows.Forms.DockStyle.Top;
-			this.iconButton6.FlatAppearance.BorderSize = 0;
-			this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.iconButton6.ForeColor = System.Drawing.Color.Gainsboro;
-			this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.Poo;
-			this.iconButton6.IconColor = System.Drawing.Color.Gainsboro;
-			this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-			this.iconButton6.IconSize = 32;
-			this.iconButton6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.iconButton6.Location = new System.Drawing.Point(0, 461);
-			this.iconButton6.Name = "iconButton6";
-			this.iconButton6.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-			this.iconButton6.Size = new System.Drawing.Size(251, 60);
-			this.iconButton6.TabIndex = 5;
-			this.iconButton6.Text = "О, кнопочка!";
-			this.iconButton6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.iconButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.iconButton6.UseVisualStyleBackColor = true;
-			this.iconButton6.Click += new System.EventHandler(this.iconButton6_Click);
-			// 
-			// iconButton5
-			// 
-			this.iconButton5.Dock = System.Windows.Forms.DockStyle.Top;
-			this.iconButton5.FlatAppearance.BorderSize = 0;
-			this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.iconButton5.ForeColor = System.Drawing.Color.Gainsboro;
-			this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.Egg;
-			this.iconButton5.IconColor = System.Drawing.Color.Gainsboro;
-			this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-			this.iconButton5.IconSize = 32;
-			this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.iconButton5.Location = new System.Drawing.Point(0, 401);
-			this.iconButton5.Name = "iconButton5";
-			this.iconButton5.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-			this.iconButton5.Size = new System.Drawing.Size(251, 60);
-			this.iconButton5.TabIndex = 4;
-			this.iconButton5.Text = "А что это?";
-			this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.iconButton5.UseVisualStyleBackColor = true;
-			this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
 			// 
 			// iconButton4
 			// 
@@ -324,8 +279,9 @@ namespace NovGorAdmin
 			// panelDesktop
 			// 
 			this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-			this.panelDesktop.Controls.Add(this.lblID);
+			this.panelDesktop.Controls.Add(this.lblT);
 			this.panelDesktop.Controls.Add(this.label3);
+			this.panelDesktop.Controls.Add(this.lblID);
 			this.panelDesktop.Controls.Add(this.pictureBox2);
 			this.panelDesktop.Controls.Add(this.panel1);
 			this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -345,17 +301,6 @@ namespace NovGorAdmin
 			this.lblID.TabIndex = 8;
 			this.lblID.Text = "Сейчас: ";
 			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-			this.label3.Location = new System.Drawing.Point(314, 256);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(91, 28);
-			this.label3.TabIndex = 7;
-			this.label3.Text = "Сейчас: ";
-			// 
 			// pictureBox2
 			// 
 			this.pictureBox2.Image = global::NovGorAdmin.Properties.Resources.flagNVZ;
@@ -374,6 +319,32 @@ namespace NovGorAdmin
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(5, 744);
 			this.panel1.TabIndex = 4;
+			// 
+			// timer1
+			// 
+			this.timer1.Interval = 1000;
+			this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+			// 
+			// lblT
+			// 
+			this.lblT.AutoSize = true;
+			this.lblT.Font = new System.Drawing.Font("Comic Sans MS", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblT.ForeColor = System.Drawing.Color.Olive;
+			this.lblT.Location = new System.Drawing.Point(516, 341);
+			this.lblT.Name = "lblT";
+			this.lblT.Size = new System.Drawing.Size(0, 61);
+			this.lblT.TabIndex = 17;
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("Comic Sans MS", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+			this.label3.Location = new System.Drawing.Point(261, 341);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(201, 61);
+			this.label3.TabIndex = 16;
+			this.label3.Text = "Сейчас: ";
 			// 
 			// FormFor
 			// 
@@ -410,8 +381,6 @@ namespace NovGorAdmin
 		private System.Windows.Forms.Panel panelMenu;
 		private System.Windows.Forms.Panel panelLogo;
 		private FontAwesome.Sharp.IconButton iconButton1;
-		private FontAwesome.Sharp.IconButton iconButton6;
-		private FontAwesome.Sharp.IconButton iconButton5;
 		private FontAwesome.Sharp.IconButton iconButton4;
 		private FontAwesome.Sharp.IconButton iconButton3;
 		private FontAwesome.Sharp.IconButton iconButton2;
@@ -426,7 +395,9 @@ namespace NovGorAdmin
 		private System.Windows.Forms.PictureBox pictureBox2;
 		private FontAwesome.Sharp.IconPictureBox BtnMin;
 		private FontAwesome.Sharp.IconPictureBox btnExit;
-		private System.Windows.Forms.Label label3;
 		public System.Windows.Forms.Label lblID;
+		private System.Windows.Forms.Label lblT;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Timer timer1;
 	}
 }

@@ -83,7 +83,7 @@ namespace NovGorAdmin
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-			this.ClientSize = new System.Drawing.Size(1344, 678);
+			this.ClientSize = new System.Drawing.Size(1344, 701);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.textBox1);

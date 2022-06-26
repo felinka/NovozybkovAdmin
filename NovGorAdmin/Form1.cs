@@ -117,9 +117,15 @@ namespace NovGorAdmin
 		public static string IDU = "", Dolz = "";
 		private void button1_Click_1(object sender, EventArgs e)
 		{
+			if(tbxLog.Text == "" || tbxPass.Text == "")
+			{
+				MessageBox.Show("Заполните все поля, а после повторите попытку.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return;
+			}
+
 			if(textBox1.Text == "")
 			{
-				MessageBox.Show("Запросите код авторизации и введите его. Найти можно на вашем почтовом ящике e-mail.");
+				MessageBox.Show("Запросите код авторизации и введите его. Найти можно на вашем почтовом ящике e-mail.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
 
@@ -135,7 +141,7 @@ namespace NovGorAdmin
 				Res.Read();
 				IDU = Res["IdUser"].ToString();
 				Dolz = Res["Dolzh"].ToString();
-				if(textBox1.Text != Res["ePass"].ToString())
+				if(textBox1.Text != Res["ePass"].ToString().Trim())
 				{
 					MessageBox.Show($"Код авторизации неверный. Проверьте его и повторите попытку снова.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					return;
@@ -168,6 +174,14 @@ namespace NovGorAdmin
 					if (Dolz == "3")
 				{
 					FormGlProekt frm = new FormGlProekt();
+					this.Hide();
+					frm.ShowDialog();
+					frm.lblID.Text = IDU;
+				}
+				else
+					if(Dolz == "4")
+				{
+					FormOthers frm = new FormOthers();
 					this.Hide();
 					frm.ShowDialog();
 					frm.lblID.Text = IDU;
@@ -286,6 +300,12 @@ namespace NovGorAdmin
 			client.Send(mess);
 
 			MessageBox.Show("Сообщение отправлено. Если не видите его, проверьте папку Спам.");
+		}
+
+		private void iconButton2_Click(object sender, EventArgs e)
+		{
+			currentChildForm.Close();
+			Reset();
 		}
 
 		private void pictureBox1_Click(object sender, EventArgs e)
