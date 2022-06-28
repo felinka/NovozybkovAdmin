@@ -29,6 +29,7 @@ namespace NovGorAdmin
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			this.panelDesktop = new System.Windows.Forms.Panel();
 			this.button2 = new System.Windows.Forms.Button();
 			this.textBox1 = new System.Windows.Forms.TextBox();
@@ -46,11 +47,11 @@ namespace NovGorAdmin
 			this.lblTitleChildForm = new System.Windows.Forms.Label();
 			this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
 			this.panelMenu = new System.Windows.Forms.Panel();
+			this.iconButton2 = new FontAwesome.Sharp.IconButton();
 			this.iconButton1 = new FontAwesome.Sharp.IconButton();
 			this.panelLogo = new System.Windows.Forms.Panel();
 			this.label1 = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.iconButton2 = new FontAwesome.Sharp.IconButton();
 			this.panelDesktop.SuspendLayout();
 			this.panelTitleBar.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -262,6 +263,28 @@ namespace NovGorAdmin
 			this.panelMenu.Size = new System.Drawing.Size(258, 719);
 			this.panelMenu.TabIndex = 5;
 			// 
+			// iconButton2
+			// 
+			this.iconButton2.Dock = System.Windows.Forms.DockStyle.Top;
+			this.iconButton2.FlatAppearance.BorderSize = 0;
+			this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.iconButton2.ForeColor = System.Drawing.Color.Gainsboro;
+			this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Hotel;
+			this.iconButton2.IconColor = System.Drawing.Color.Gainsboro;
+			this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.iconButton2.IconSize = 32;
+			this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.iconButton2.Location = new System.Drawing.Point(0, 221);
+			this.iconButton2.Name = "iconButton2";
+			this.iconButton2.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+			this.iconButton2.Size = new System.Drawing.Size(258, 60);
+			this.iconButton2.TabIndex = 1;
+			this.iconButton2.Text = "Авторизация";
+			this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.iconButton2.UseVisualStyleBackColor = true;
+			this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
+			// 
 			// iconButton1
 			// 
 			this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -318,28 +341,6 @@ namespace NovGorAdmin
 			this.pictureBox1.TabStop = false;
 			this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
 			// 
-			// iconButton2
-			// 
-			this.iconButton2.Dock = System.Windows.Forms.DockStyle.Top;
-			this.iconButton2.FlatAppearance.BorderSize = 0;
-			this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.iconButton2.ForeColor = System.Drawing.Color.Gainsboro;
-			this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Hotel;
-			this.iconButton2.IconColor = System.Drawing.Color.Gainsboro;
-			this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-			this.iconButton2.IconSize = 32;
-			this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.iconButton2.Location = new System.Drawing.Point(0, 221);
-			this.iconButton2.Name = "iconButton2";
-			this.iconButton2.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-			this.iconButton2.Size = new System.Drawing.Size(258, 60);
-			this.iconButton2.TabIndex = 1;
-			this.iconButton2.Text = "Авторизация";
-			this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.iconButton2.UseVisualStyleBackColor = true;
-			this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
-			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -350,6 +351,7 @@ namespace NovGorAdmin
 			this.Controls.Add(this.panelTitleBar);
 			this.Controls.Add(this.panelMenu);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "Form1";

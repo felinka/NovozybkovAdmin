@@ -34,8 +34,8 @@ namespace NovGorAdmin
 			this.tbxText = new System.Windows.Forms.TextBox();
 			this.MainPanel = new System.Windows.Forms.TableLayoutPanel();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.rbtF = new System.Windows.Forms.RadioButton();
 			this.rbtT = new System.Windows.Forms.RadioButton();
+			this.rbtF = new System.Windows.Forms.RadioButton();
 			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -44,7 +44,7 @@ namespace NovGorAdmin
 			this.lbl.AutoSize = true;
 			this.lbl.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-			this.lbl.Location = new System.Drawing.Point(39, 593);
+			this.lbl.Location = new System.Drawing.Point(21, 583);
 			this.lbl.Name = "lbl";
 			this.lbl.Size = new System.Drawing.Size(383, 19);
 			this.lbl.TabIndex = 12;
@@ -65,7 +65,7 @@ namespace NovGorAdmin
 			// tbxText
 			// 
 			this.tbxText.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.tbxText.Location = new System.Drawing.Point(23, 639);
+			this.tbxText.Location = new System.Drawing.Point(12, 643);
 			this.tbxText.Multiline = true;
 			this.tbxText.Name = "tbxText";
 			this.tbxText.Size = new System.Drawing.Size(733, 66);
@@ -80,7 +80,7 @@ namespace NovGorAdmin
 			this.MainPanel.Name = "MainPanel";
 			this.MainPanel.RowCount = 1;
 			this.MainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-			this.MainPanel.Size = new System.Drawing.Size(1305, 578);
+			this.MainPanel.Size = new System.Drawing.Size(1305, 566);
 			this.MainPanel.TabIndex = 9;
 			// 
 			// groupBox1
@@ -94,17 +94,6 @@ namespace NovGorAdmin
 			this.groupBox1.TabIndex = 13;
 			this.groupBox1.TabStop = false;
 			// 
-			// rbtF
-			// 
-			this.rbtF.AutoSize = true;
-			this.rbtF.Checked = true;
-			this.rbtF.Location = new System.Drawing.Point(27, 19);
-			this.rbtF.Name = "rbtF";
-			this.rbtF.Size = new System.Drawing.Size(98, 28);
-			this.rbtF.TabIndex = 0;
-			this.rbtF.Text = "отказать";
-			this.rbtF.UseVisualStyleBackColor = true;
-			// 
 			// rbtT
 			// 
 			this.rbtT.AutoSize = true;
@@ -115,12 +104,24 @@ namespace NovGorAdmin
 			this.rbtT.Text = "одобрить";
 			this.rbtT.UseVisualStyleBackColor = true;
 			// 
+			// rbtF
+			// 
+			this.rbtF.AutoSize = true;
+			this.rbtF.Checked = true;
+			this.rbtF.Location = new System.Drawing.Point(27, 19);
+			this.rbtF.Name = "rbtF";
+			this.rbtF.Size = new System.Drawing.Size(98, 28);
+			this.rbtF.TabIndex = 0;
+			this.rbtF.TabStop = true;
+			this.rbtF.Text = "отказать";
+			this.rbtF.UseVisualStyleBackColor = true;
+			// 
 			// FormProjects
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-			this.ClientSize = new System.Drawing.Size(1336, 709);
+			this.ClientSize = new System.Drawing.Size(1336, 728);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.lbl);
 			this.Controls.Add(this.btn);

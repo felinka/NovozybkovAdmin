@@ -25,6 +25,7 @@ namespace NovGorAdmin
 			this.listUsersTableAdapter.Fill(this.adminNovozybkovDataSet.ListUsers);
 			// TODO: данная строка кода позволяет загрузить данные в таблицу "dB_ADM_NVZDataSet.Worker". При необходимости она может быть перемещена или удалена.
 			bsUser.Filter = $"IdUser = {Form1.IDU}";
+			lblFi.Text = lblFIO.Text + " " + label2.Text + " " + label3.Text;
 			
 		}
 

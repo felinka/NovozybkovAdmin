@@ -246,7 +246,7 @@ namespace NovGorAdmin
 					SqlConnection Con = new SqlConnection(Form1.TxtCon);
 
 					Con.Open();
-					string StrQuarte1 = $@"Insert into ProjectsIdeas (IdGlPr, TextId, StatusId, DateId) Values ({Form1.IDU},'{tbxText.Text}', 0, GETDATE())";
+					string StrQuarte1 = $@"Insert into ProjectsIdeas (IdGlPr, TextId, StatusId, DateId, FIOPr) Values ({Form1.IDU},'{tbxText.Text}', 0, GETDATE(), '{FormGlProekt.FIOPr}')";
 					SqlCommand Quarte11 = new SqlCommand(StrQuarte1, Con);
 					Quarte11.ExecuteNonQuery();
 					Con.Close();
@@ -282,13 +282,13 @@ namespace NovGorAdmin
 					if (rbtF.Checked)
 					{
 
-						StrQuarte1 = $@"Update ProjectsIdeas Set TextId = TextId + ' -------отклонено начальником {Nachal} -------', IdNachRassmotr = {Form1.IDU} , StatusId = 2 Where [IdI] = {tbxText.Text}";
+						StrQuarte1 = $@"Update ProjectsIdeas Set  IdNachRassmotr = {Form1.IDU} , StatusId = 2, FIONach = '{Nachal}' Where [IdI] = {tbxText.Text}";
 
 					}
 					else
 						if (rbtT.Checked)
 					{
-						StrQuarte1 = $@"Update ProjectsIdeas Set TextId = TextId + ' -------ОДОБРЕНО начальником {Nachal} -------', IdNachRassmotr = {Form1.IDU} , StatusId = 1 Where [IdI] = {tbxText.Text}";
+						StrQuarte1 = $@"Update ProjectsIdeas Set  IdNachRassmotr = {Form1.IDU} , StatusId = 1, FIONach = '{Nachal}' Where [IdI] = {tbxText.Text}";
 					}
 
 				

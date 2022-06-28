@@ -59,8 +59,11 @@ namespace NovGorAdmin
 			this.label4 = new System.Windows.Forms.Label();
 			this.listUsersTableAdapter = new NovGorAdmin.AdminNovozybkovDataSetTableAdapters.ListUsersTableAdapter();
 			this.btnUvol = new System.Windows.Forms.Button();
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.lblFi = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.bsUsers)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.adminNovozybkovDataSet)).BeginInit();
+			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// label19
@@ -68,7 +71,7 @@ namespace NovGorAdmin
 			this.label19.AutoSize = true;
 			this.label19.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-			this.label19.Location = new System.Drawing.Point(1235, 23);
+			this.label19.Location = new System.Drawing.Point(1225, 41);
 			this.label19.Name = "label19";
 			this.label19.Size = new System.Drawing.Size(41, 28);
 			this.label19.TabIndex = 41;
@@ -261,7 +264,7 @@ namespace NovGorAdmin
 			this.lblOtch.AutoSize = true;
 			this.lblOtch.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsUsers, "OtchU", true));
 			this.lblOtch.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblOtch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+			this.lblOtch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
 			this.lblOtch.Location = new System.Drawing.Point(606, 93);
 			this.lblOtch.Name = "lblOtch";
 			this.lblOtch.Size = new System.Drawing.Size(25, 33);
@@ -274,7 +277,7 @@ namespace NovGorAdmin
 			this.lblName.AutoSize = true;
 			this.lblName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsUsers, "NameU", true));
 			this.lblName.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+			this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
 			this.lblName.Location = new System.Drawing.Point(605, 57);
 			this.lblName.Name = "lblName";
 			this.lblName.Size = new System.Drawing.Size(25, 33);
@@ -284,22 +287,22 @@ namespace NovGorAdmin
 			// 
 			// label1
 			// 
-			this.label1.AutoSize = true;
 			this.label1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsUsers, "Dolzhn", true));
 			this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.ForeColor = System.Drawing.Color.Olive;
-			this.label1.Location = new System.Drawing.Point(591, 146);
+			this.label1.Location = new System.Drawing.Point(228, 114);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(115, 28);
+			this.label1.Size = new System.Drawing.Size(774, 28);
 			this.label1.TabIndex = 23;
 			this.label1.Text = "должность";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// lblFIO
 			// 
 			this.lblFIO.AutoSize = true;
 			this.lblFIO.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsUsers, "FamU", true));
 			this.lblFIO.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblFIO.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+			this.lblFIO.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
 			this.lblFIO.Location = new System.Drawing.Point(601, 17);
 			this.lblFIO.Name = "lblFIO";
 			this.lblFIO.Size = new System.Drawing.Size(31, 33);
@@ -372,7 +375,7 @@ namespace NovGorAdmin
 			// 
 			this.btnUvol.BackColor = System.Drawing.Color.Khaki;
 			this.btnUvol.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnUvol.Location = new System.Drawing.Point(24, 16);
+			this.btnUvol.Location = new System.Drawing.Point(27, 108);
 			this.btnUvol.Name = "btnUvol";
 			this.btnUvol.Size = new System.Drawing.Size(126, 34);
 			this.btnUvol.TabIndex = 48;
@@ -381,12 +384,33 @@ namespace NovGorAdmin
 			this.btnUvol.Visible = false;
 			this.btnUvol.Click += new System.EventHandler(this.button2_Click);
 			// 
+			// panel1
+			// 
+			this.panel1.Controls.Add(this.lblFi);
+			this.panel1.Location = new System.Drawing.Point(0, 2);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(1229, 100);
+			this.panel1.TabIndex = 49;
+			// 
+			// lblFi
+			// 
+			this.lblFi.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.lblFi.Font = new System.Drawing.Font("Comic Sans MS", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblFi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+			this.lblFi.Location = new System.Drawing.Point(0, 0);
+			this.lblFi.Name = "lblFi";
+			this.lblFi.Size = new System.Drawing.Size(1229, 100);
+			this.lblFi.TabIndex = 22;
+			this.lblFi.Text = "Фамилия имя отчество:";
+			this.lblFi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
 			// FormProfilesRabot
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
 			this.ClientSize = new System.Drawing.Size(1344, 678);
+			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.btnUvol);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.button1);
@@ -418,6 +442,7 @@ namespace NovGorAdmin
 			this.Load += new System.EventHandler(this.FormProfilesRabot_Load);
 			((System.ComponentModel.ISupportInitialize)(this.bsUsers)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.adminNovozybkovDataSet)).EndInit();
+			this.panel1.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -454,5 +479,7 @@ namespace NovGorAdmin
 		private System.Windows.Forms.BindingSource bsUsers;
 		private AdminNovozybkovDataSetTableAdapters.ListUsersTableAdapter listUsersTableAdapter;
 		private System.Windows.Forms.Button btnUvol;
+		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.Label lblFi;
 	}
 }

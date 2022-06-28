@@ -30,6 +30,7 @@ namespace NovGorAdmin
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFor));
 			this.panelMenu = new System.Windows.Forms.Panel();
 			this.iconButton4 = new FontAwesome.Sharp.IconButton();
 			this.iconButton3 = new FontAwesome.Sharp.IconButton();
@@ -45,12 +46,12 @@ namespace NovGorAdmin
 			this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
 			this.panelShadow = new System.Windows.Forms.Panel();
 			this.panelDesktop = new System.Windows.Forms.Panel();
+			this.lblT = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
 			this.lblID = new System.Windows.Forms.Label();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
-			this.lblT = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
 			this.panelMenu.SuspendLayout();
 			this.panelLogo.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -92,7 +93,7 @@ namespace NovGorAdmin
 			this.iconButton4.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
 			this.iconButton4.Size = new System.Drawing.Size(251, 60);
 			this.iconButton4.TabIndex = 3;
-			this.iconButton4.Text = "Добавление аккаунта";
+			this.iconButton4.Text = "Добавление\r\n аккаунта";
 			this.iconButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.iconButton4.UseVisualStyleBackColor = true;
@@ -290,6 +291,27 @@ namespace NovGorAdmin
 			this.panelDesktop.Size = new System.Drawing.Size(1349, 744);
 			this.panelDesktop.TabIndex = 4;
 			// 
+			// lblT
+			// 
+			this.lblT.AutoSize = true;
+			this.lblT.Font = new System.Drawing.Font("Comic Sans MS", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblT.ForeColor = System.Drawing.Color.Olive;
+			this.lblT.Location = new System.Drawing.Point(516, 341);
+			this.lblT.Name = "lblT";
+			this.lblT.Size = new System.Drawing.Size(0, 60);
+			this.lblT.TabIndex = 17;
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("Comic Sans MS", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+			this.label3.Location = new System.Drawing.Point(261, 341);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(195, 60);
+			this.label3.TabIndex = 16;
+			this.label3.Text = "Сейчас: ";
+			// 
 			// lblID
 			// 
 			this.lblID.AutoSize = true;
@@ -325,27 +347,6 @@ namespace NovGorAdmin
 			this.timer1.Interval = 1000;
 			this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
 			// 
-			// lblT
-			// 
-			this.lblT.AutoSize = true;
-			this.lblT.Font = new System.Drawing.Font("Comic Sans MS", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblT.ForeColor = System.Drawing.Color.Olive;
-			this.lblT.Location = new System.Drawing.Point(516, 341);
-			this.lblT.Name = "lblT";
-			this.lblT.Size = new System.Drawing.Size(0, 61);
-			this.lblT.TabIndex = 17;
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Font = new System.Drawing.Font("Comic Sans MS", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-			this.label3.Location = new System.Drawing.Point(261, 341);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(201, 61);
-			this.label3.TabIndex = 16;
-			this.label3.Text = "Сейчас: ";
-			// 
 			// FormFor
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -357,6 +358,7 @@ namespace NovGorAdmin
 			this.Controls.Add(this.panelTitleBar);
 			this.Controls.Add(this.panelMenu);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "FormFor";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "FormFor";

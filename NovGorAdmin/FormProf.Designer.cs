@@ -31,6 +31,8 @@ namespace NovGorAdmin
 		{
 			this.components = new System.ComponentModel.Container();
 			this.lblFIO = new System.Windows.Forms.Label();
+			this.bsUser = new System.Windows.Forms.BindingSource(this.components);
+			this.adminNovozybkovDataSet = new NovGorAdmin.AdminNovozybkovDataSet();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
@@ -50,11 +52,12 @@ namespace NovGorAdmin
 			this.label17 = new System.Windows.Forms.Label();
 			this.label18 = new System.Windows.Forms.Label();
 			this.label19 = new System.Windows.Forms.Label();
-			this.bsUser = new System.Windows.Forms.BindingSource(this.components);
-			this.adminNovozybkovDataSet = new NovGorAdmin.AdminNovozybkovDataSet();
 			this.listUsersTableAdapter = new NovGorAdmin.AdminNovozybkovDataSetTableAdapters.ListUsersTableAdapter();
+			this.lblFi = new System.Windows.Forms.Label();
+			this.panel1 = new System.Windows.Forms.Panel();
 			((System.ComponentModel.ISupportInitialize)(this.bsUser)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.adminNovozybkovDataSet)).BeginInit();
+			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// lblFIO
@@ -62,7 +65,7 @@ namespace NovGorAdmin
 			this.lblFIO.AutoSize = true;
 			this.lblFIO.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsUser, "FamU", true));
 			this.lblFIO.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblFIO.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+			this.lblFIO.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
 			this.lblFIO.Location = new System.Drawing.Point(483, 8);
 			this.lblFIO.Name = "lblFIO";
 			this.lblFIO.Size = new System.Drawing.Size(31, 33);
@@ -70,24 +73,34 @@ namespace NovGorAdmin
 			this.lblFIO.Text = "T";
 			this.lblFIO.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
+			// bsUser
+			// 
+			this.bsUser.DataMember = "ListUsers";
+			this.bsUser.DataSource = this.adminNovozybkovDataSet;
+			// 
+			// adminNovozybkovDataSet
+			// 
+			this.adminNovozybkovDataSet.DataSetName = "AdminNovozybkovDataSet";
+			this.adminNovozybkovDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+			// 
 			// label1
 			// 
-			this.label1.AutoSize = true;
 			this.label1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsUser, "Dolzhn", true));
 			this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.ForeColor = System.Drawing.Color.Olive;
-			this.label1.Location = new System.Drawing.Point(473, 137);
+			this.label1.Location = new System.Drawing.Point(253, 103);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(115, 28);
+			this.label1.Size = new System.Drawing.Size(640, 39);
 			this.label1.TabIndex = 3;
 			this.label1.Text = "должность";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
 			this.label2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsUser, "NameU", true));
 			this.label2.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+			this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
 			this.label2.Location = new System.Drawing.Point(487, 48);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(25, 33);
@@ -100,7 +113,7 @@ namespace NovGorAdmin
 			this.label3.AutoSize = true;
 			this.label3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsUser, "OtchU", true));
 			this.label3.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+			this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
 			this.label3.Location = new System.Drawing.Point(488, 84);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(25, 33);
@@ -114,7 +127,7 @@ namespace NovGorAdmin
 			this.lblIdU.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsUser, "IdUser", true));
 			this.lblIdU.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblIdU.ForeColor = System.Drawing.Color.Olive;
-			this.lblIdU.Location = new System.Drawing.Point(1185, 14);
+			this.lblIdU.Location = new System.Drawing.Point(1216, 39);
 			this.lblIdU.Name = "lblIdU";
 			this.lblIdU.Size = new System.Drawing.Size(0, 28);
 			this.lblIdU.TabIndex = 6;
@@ -285,25 +298,35 @@ namespace NovGorAdmin
 			this.label19.AutoSize = true;
 			this.label19.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-			this.label19.Location = new System.Drawing.Point(1117, 14);
+			this.label19.Location = new System.Drawing.Point(1169, 39);
 			this.label19.Name = "label19";
 			this.label19.Size = new System.Drawing.Size(41, 28);
 			this.label19.TabIndex = 21;
 			this.label19.Text = "№:";
 			// 
-			// bsUser
-			// 
-			this.bsUser.DataMember = "ListUsers";
-			this.bsUser.DataSource = this.adminNovozybkovDataSet;
-			// 
-			// adminNovozybkovDataSet
-			// 
-			this.adminNovozybkovDataSet.DataSetName = "AdminNovozybkovDataSet";
-			this.adminNovozybkovDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-			// 
 			// listUsersTableAdapter
 			// 
 			this.listUsersTableAdapter.ClearBeforeFill = true;
+			// 
+			// lblFi
+			// 
+			this.lblFi.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.lblFi.Font = new System.Drawing.Font("Comic Sans MS", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblFi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+			this.lblFi.Location = new System.Drawing.Point(0, 0);
+			this.lblFi.Name = "lblFi";
+			this.lblFi.Size = new System.Drawing.Size(1155, 100);
+			this.lblFi.TabIndex = 22;
+			this.lblFi.Text = "Фамилия имя отчество:";
+			this.lblFi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// panel1
+			// 
+			this.panel1.Controls.Add(this.lblFi);
+			this.panel1.Location = new System.Drawing.Point(-2, 0);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(1155, 100);
+			this.panel1.TabIndex = 23;
 			// 
 			// FormProf
 			// 
@@ -312,8 +335,11 @@ namespace NovGorAdmin
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
 			this.ClientSize = new System.Drawing.Size(1289, 540);
 			this.Controls.Add(this.label19);
+			this.Controls.Add(this.lblIdU);
+			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.label18);
 			this.Controls.Add(this.label16);
+			this.Controls.Add(this.label1);
 			this.Controls.Add(this.label17);
 			this.Controls.Add(this.label14);
 			this.Controls.Add(this.label15);
@@ -326,16 +352,15 @@ namespace NovGorAdmin
 			this.Controls.Add(this.label8);
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.label5);
-			this.Controls.Add(this.lblIdU);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
-			this.Controls.Add(this.label1);
 			this.Controls.Add(this.lblFIO);
 			this.Name = "FormProf";
 			this.Text = "Мой профиль";
 			this.Load += new System.EventHandler(this.FormProf_Load);
 			((System.ComponentModel.ISupportInitialize)(this.bsUser)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.adminNovozybkovDataSet)).EndInit();
+			this.panel1.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -365,5 +390,7 @@ namespace NovGorAdmin
 		private System.Windows.Forms.Label label18;
 		private System.Windows.Forms.Label label19;
 		public System.Windows.Forms.Label lblIdU;
+		private System.Windows.Forms.Label lblFi;
+		private System.Windows.Forms.Panel panel1;
 	}
 }

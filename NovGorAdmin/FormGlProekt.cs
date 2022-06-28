@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -30,9 +31,18 @@ namespace NovGorAdmin
 			this.ControlBox = false;
 			this.DoubleBuffered = true;
 			this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
+			SqlConnection Con = new SqlConnection(Form1.TxtCon);
+			Con.Open();
+			SqlCommand q = new SqlCommand($"Select FamU+' '+LEFT(NameU, 1)+ '.'+LEFT(OtchU,1)+ '.' as FIO from ListUsers Where IdUser = {Form1.IDU}", Con);
+			SqlDataReader res = q.ExecuteReader();
+			res.Read();
+			FIOPr = res["FIO"].ToString();
+			res.Close();
+			Con.Close();
 		}
 
-
+		public static string FIOPr = "";
 		//Поля
 		private IconButton currentBtn;
 		private Panel leftBorderBtn;

@@ -56,9 +56,9 @@ namespace NovGorAdmin
 			// 
 			this.btnLast.BackColor = System.Drawing.Color.Khaki;
 			this.btnLast.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnLast.Location = new System.Drawing.Point(495, 587);
+			this.btnLast.Location = new System.Drawing.Point(495, 576);
 			this.btnLast.Name = "btnLast";
-			this.btnLast.Size = new System.Drawing.Size(234, 32);
+			this.btnLast.Size = new System.Drawing.Size(234, 43);
 			this.btnLast.TabIndex = 45;
 			this.btnLast.Text = "Добавить профиль";
 			this.btnLast.UseVisualStyleBackColor = false;
@@ -67,7 +67,7 @@ namespace NovGorAdmin
 			// tbxFam
 			// 
 			this.tbxFam.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.tbxFam.Location = new System.Drawing.Point(52, 68);
+			this.tbxFam.Location = new System.Drawing.Point(52, 83);
 			this.tbxFam.Name = "tbxFam";
 			this.tbxFam.Size = new System.Drawing.Size(288, 31);
 			this.tbxFam.TabIndex = 47;
@@ -97,7 +97,7 @@ namespace NovGorAdmin
 			// tbxName
 			// 
 			this.tbxName.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.tbxName.Location = new System.Drawing.Point(453, 68);
+			this.tbxName.Location = new System.Drawing.Point(453, 83);
 			this.tbxName.Name = "tbxName";
 			this.tbxName.Size = new System.Drawing.Size(288, 31);
 			this.tbxName.TabIndex = 49;
@@ -116,7 +116,7 @@ namespace NovGorAdmin
 			// tbxOtch
 			// 
 			this.tbxOtch.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.tbxOtch.Location = new System.Drawing.Point(922, 68);
+			this.tbxOtch.Location = new System.Drawing.Point(922, 83);
 			this.tbxOtch.Name = "tbxOtch";
 			this.tbxOtch.Size = new System.Drawing.Size(288, 31);
 			this.tbxOtch.TabIndex = 51;
@@ -162,7 +162,7 @@ namespace NovGorAdmin
 			this.cbxG.Items.AddRange(new object[] {
             "М",
             "Ж"});
-			this.cbxG.Location = new System.Drawing.Point(103, 212);
+			this.cbxG.Location = new System.Drawing.Point(103, 226);
 			this.cbxG.Name = "cbxG";
 			this.cbxG.Size = new System.Drawing.Size(157, 32);
 			this.cbxG.TabIndex = 59;
@@ -178,7 +178,7 @@ namespace NovGorAdmin
             "Специалист Отдела Кадров",
             "Главный проектировщик",
             "Другое"});
-			this.cbxDolzh.Location = new System.Drawing.Point(453, 212);
+			this.cbxDolzh.Location = new System.Drawing.Point(453, 226);
 			this.cbxDolzh.Name = "cbxDolzh";
 			this.cbxDolzh.Size = new System.Drawing.Size(288, 32);
 			this.cbxDolzh.TabIndex = 60;
@@ -187,7 +187,7 @@ namespace NovGorAdmin
 			// tbxDolzh
 			// 
 			this.tbxDolzh.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.tbxDolzh.Location = new System.Drawing.Point(453, 277);
+			this.tbxDolzh.Location = new System.Drawing.Point(453, 291);
 			this.tbxDolzh.Name = "tbxDolzh";
 			this.tbxDolzh.Size = new System.Drawing.Size(288, 31);
 			this.tbxDolzh.TabIndex = 61;
@@ -198,7 +198,7 @@ namespace NovGorAdmin
 			this.lblDolzh.AutoSize = true;
 			this.lblDolzh.Font = new System.Drawing.Font("Comic Sans MS", 7F);
 			this.lblDolzh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-			this.lblDolzh.Location = new System.Drawing.Point(448, 256);
+			this.lblDolzh.Location = new System.Drawing.Point(448, 270);
 			this.lblDolzh.Name = "lblDolzh";
 			this.lblDolzh.Size = new System.Drawing.Size(125, 17);
 			this.lblDolzh.TabIndex = 62;
@@ -210,9 +210,9 @@ namespace NovGorAdmin
 			this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
 			this.dateTimePicker1.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-			this.dateTimePicker1.Location = new System.Drawing.Point(949, 212);
+			this.dateTimePicker1.Location = new System.Drawing.Point(922, 226);
 			this.dateTimePicker1.Name = "dateTimePicker1";
-			this.dateTimePicker1.Size = new System.Drawing.Size(247, 33);
+			this.dateTimePicker1.Size = new System.Drawing.Size(288, 33);
 			this.dateTimePicker1.TabIndex = 63;
 			// 
 			// label7
@@ -229,7 +229,7 @@ namespace NovGorAdmin
 			// tbxOklad
 			// 
 			this.tbxOklad.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.tbxOklad.Location = new System.Drawing.Point(922, 405);
+			this.tbxOklad.Location = new System.Drawing.Point(922, 421);
 			this.tbxOklad.Name = "tbxOklad";
 			this.tbxOklad.Size = new System.Drawing.Size(288, 31);
 			this.tbxOklad.TabIndex = 68;
@@ -259,7 +259,7 @@ namespace NovGorAdmin
 			// tbxP
 			// 
 			this.tbxP.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.tbxP.Location = new System.Drawing.Point(89, 405);
+			this.tbxP.Location = new System.Drawing.Point(89, 421);
 			this.tbxP.Mask = "0000000000";
 			this.tbxP.Name = "tbxP";
 			this.tbxP.Size = new System.Drawing.Size(249, 31);
@@ -268,7 +268,7 @@ namespace NovGorAdmin
 			// tbxINN
 			// 
 			this.tbxINN.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.tbxINN.Location = new System.Drawing.Point(468, 405);
+			this.tbxINN.Location = new System.Drawing.Point(468, 421);
 			this.tbxINN.Mask = "000000000000";
 			this.tbxINN.Name = "tbxINN";
 			this.tbxINN.Size = new System.Drawing.Size(288, 31);

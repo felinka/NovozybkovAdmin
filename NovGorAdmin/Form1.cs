@@ -92,24 +92,7 @@ namespace NovGorAdmin
 		}
 
 
-		private void OpenChildForm(Form childForm)
-		{
-			//open only form
-			if (currentChildForm != null)
-			{
-				currentChildForm.Close();
-			}
-			currentChildForm = childForm;
-			//End
-			childForm.TopLevel = false;
-			childForm.FormBorderStyle = FormBorderStyle.None;
-			childForm.Dock = DockStyle.Fill;
-			panelDesktop.Controls.Add(childForm);
-			panelDesktop.Tag = childForm;
-			childForm.BringToFront();
-			childForm.Show();
-			lblTitleChildForm.Text = childForm.Text;
-		}
+		
 		private void button1_Click(object sender, EventArgs e)
 		{
 			
@@ -141,7 +124,14 @@ namespace NovGorAdmin
 				Res.Read();
 				IDU = Res["IdUser"].ToString();
 				Dolz = Res["Dolzh"].ToString();
-				if(textBox1.Text != Res["ePass"].ToString().Trim())
+				string dt = Res["DateOfLogin"].ToString();
+
+					if (dt.Substring(0, 10) != DateTime.Now.ToString().Substring(0, 10))
+				{
+					MessageBox.Show("Запросите новый код подтверждения на почту." , "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					return;
+				}
+				if (textBox1.Text != Res["ePass"].ToString().Trim())
 				{
 					MessageBox.Show($"Код авторизации неверный. Проверьте его и повторите попытку снова.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					return;
@@ -195,7 +185,24 @@ namespace NovGorAdmin
 			}
 
 		}
-
+		private void OpenChildForm(Form childForm)
+		{
+			//open only form
+			if (currentChildForm != null)
+			{
+				currentChildForm.Close();
+			}
+			currentChildForm = childForm;
+			//End
+			childForm.TopLevel = false;
+			childForm.FormBorderStyle = FormBorderStyle.None;
+			childForm.Dock = DockStyle.Fill;
+			panelDesktop.Controls.Add(childForm);
+			panelDesktop.Tag = childForm;
+			childForm.BringToFront();
+			childForm.Show();
+			lblTitleChildForm.Text = childForm.Text;
+		}
 		private void iconButton1_Click(object sender, EventArgs e)
 		{
 			ActivateButton(sender, RGBColors.color3);
@@ -266,7 +273,7 @@ namespace NovGorAdmin
 
 			if(BW == 0)
 			{
-				MessageBox.Show("Пошёл нахуй отсюда, ты вообще-то уволен");
+				MessageBox.Show("Вы были уволены, доступ к данному приложению у вас закрыт.");
 				return;
 			}
 			if(dt.Substring(0, 10) == DateTime.Now.ToString().Substring(0,10))

@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.Runtime.InteropServices;
+using System.IO;
+using System.Data.SqlClient;
 
 namespace NovGorAdmin
 {
@@ -169,6 +171,53 @@ namespace NovGorAdmin
 		private void timer1_Tick(object sender, EventArgs e)
 		{
 			lblT.Text = DateTime.Now.ToLongTimeString();
+		}
+
+		private void iconButton6_Click(object sender, EventArgs e)
+		{
+			if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+			{
+				string t;
+				
+
+				string TxtQ = "Select* from ProjectsIdeas Where StatusId = 1";
+
+				SqlConnection Con = new SqlConnection(Form1.TxtCon);
+				Con.Open();
+				SqlCommand Q = new SqlCommand(TxtQ, Con);
+				
+				SqlDataReader res = Q.ExecuteReader();
+				int count = 0;
+				if (res.HasRows)
+				{
+					StreamWriter f = new StreamWriter(new FileStream(saveFileDialog1.FileName, FileMode.Create), Encoding.GetEncoding(1251));
+					t = "Номер идеи;Главный проектировщик;Суть проекта;Дата разработки проекта;Принявший начальник";
+					f.WriteLine(t);
+					while (res.Read())
+					{
+						t = "";
+						count++;
+						t += count + ";";
+						t += res["FIOPr"].ToString() + ";";
+						t += res["TextId"].ToString() + ";";
+						t += res["DateId"].ToString().Substring(0,10) + ";";
+						t += res["FIONach"].ToString() + ";";
+
+						f.WriteLine(t);
+					}
+					f.Close();
+					MessageBox.Show("Файл успешно сохранён!", "Готово", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					return;
+				}
+				else
+				{
+					MessageBox.Show("Нет принятых проектов.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					return;
+				}
+
+				
+				
+			}
 		}
 	}
 }
