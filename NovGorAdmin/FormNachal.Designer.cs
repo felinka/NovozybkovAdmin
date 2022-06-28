@@ -239,7 +239,7 @@ namespace NovGorAdmin
 			this.iconButton6.Location = new System.Drawing.Point(0, 461);
 			this.iconButton6.Name = "iconButton6";
 			this.iconButton6.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-			this.iconButton6.Size = new System.Drawing.Size(251, 60);
+			this.iconButton6.Size = new System.Drawing.Size(251, 93);
 			this.iconButton6.TabIndex = 5;
 			this.iconButton6.Text = "Сформировать\r\nотчёт по \r\nпроектам";
 			this.iconButton6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -263,7 +263,7 @@ namespace NovGorAdmin
 			this.iconButton5.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
 			this.iconButton5.Size = new System.Drawing.Size(251, 60);
 			this.iconButton5.TabIndex = 4;
-			this.iconButton5.Text = "Идеи\r\nпроектировщиков";
+			this.iconButton5.Text = "Идеи\r\nпроектировщика";
 			this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.iconButton5.UseVisualStyleBackColor = true;

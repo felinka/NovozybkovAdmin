@@ -92,7 +92,7 @@ namespace NovGorAdmin
 			Q.ExecuteNonQuery();
 			Con.Close();
 
-			string StrQuarte = $@"Insert into RepLog (TextRep, DateRep, BoolCompl, IdUser) Values ('- ТРЕБУЕТСЯ СОЗДАНИЕ АККАУНТА - Для работника {tbxFam.Text} {tbxName.Text} {tbxOtch.Text}, должность : {D}', GETDATE(), 0, {Form1.IDU})";
+			string StrQuarte = $@"Insert into RepLog (TextRep, DateRep, BoolCompl, IdUser) Values ('- ТРЕБУЕТСЯ СОЗДАНИЕ АККАУНТА - Для работника {tbxFam.Text} {tbxName.Text} {tbxOtch.Text}, должность : {D} , уникальный номер: {NewID}', GETDATE(), 0, {Form1.IDU})";
 			Con.Open();
 			SqlCommand Quarte1 = new SqlCommand(StrQuarte, Con);
 			Quarte1.ExecuteNonQuery();

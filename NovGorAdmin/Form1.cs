@@ -281,43 +281,84 @@ namespace NovGorAdmin
 				MessageBox.Show("Вы можете войти с кодом, который приходил сегодня.");
 				return;
 			}
+			try
+			{
 
-			MailAddress fromAdress = new MailAddress("novozybkovadm@mail.ru");
 
-			MailAddress toAdress = new MailAddress(MAIL);
-			Random rnd = new Random();
-			string ePass = rnd.Next(1, 10).ToString()+ rnd.Next(1, 10).ToString()+ rnd.Next(1, 10).ToString()+ rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString();
 
-			TxtQuery = $@"Update LogUsers set ePass ='{ePass}' , DateOfLogin = GETDATE() where IdUser = {ID}";
-			Con.Open();
-			SqlCommand Quey11 = new SqlCommand(TxtQuery, Con);
-			Quey11.ExecuteNonQuery();
-			Con.Close();
+				MailAddress fromAdress = new MailAddress("novozybkovadm@mail.ru");
 
-			MailMessage mess = new MailMessage(fromAdress, toAdress);
-			mess.Body = $"Ваш код авторизации: {ePass}";
-			mess.Subject = $"Вход в программу";
+				MailAddress toAdress = new MailAddress(MAIL);
+				Random rnd = new Random();
+				string ePass = rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString();
 
-			SmtpClient client = new SmtpClient();
-			client.Host = "smtp.mail.ru";
-			client.Port = 587; // Обратите внимание что порт 587
-			client.EnableSsl = true;
-			client.Credentials = new NetworkCredential("novozybkovadm@mail.ru", "Eq9lC4YbGlJdGM2xdCpT");
+				TxtQuery = $@"Update LogUsers set ePass ='{ePass}' , DateOfLogin = GETDATE() where IdUser = {ID}";
+				Con.Open();
+				SqlCommand Quey11 = new SqlCommand(TxtQuery, Con);
+				Quey11.ExecuteNonQuery();
+				Con.Close();
 
-			client.Send(mess);
+				MailMessage mess = new MailMessage(fromAdress, toAdress);
+				mess.Body = $"Ваш код авторизации: {ePass}";
+				mess.Subject = $"Вход в программу";
 
-			MessageBox.Show("Сообщение отправлено. Если не видите его, проверьте папку Спам.");
+				SmtpClient client = new SmtpClient();
+				client.Host = "smtp.mail.ru";
+				client.Port = 587; // Обратите внимание что порт 587
+				client.EnableSsl = true;
+				client.Credentials = new NetworkCredential("novozybkovadm@mail.ru", "Eq9lC4YbGlJdGM2xdCpT");
+
+				client.Send(mess);
+
+				MessageBox.Show("Сообщение отправлено. Если не видите его, проверьте папку Спам.");
+			}
+			catch
+			{
+				MessageBox.Show($"Произошла неизвестная ошибка. Код: FR1ErMail. Сообщите об этом программисту.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 
 		private void iconButton2_Click(object sender, EventArgs e)
 		{
-			currentChildForm.Close();
+			try
+			{
+				currentChildForm.Close();
+			}
+			catch
+			{
+
+			}
+
+			Reset();
+		}
+
+		private void iconButton3_Click(object sender, EventArgs e)
+		{
+			ActivateButton(sender, RGBColors.color3);
+			Help.ShowHelp(this, "Spravka.chm");
+			try
+			{
+				currentChildForm.Close();
+			}
+			catch
+			{
+
+			}
+
 			Reset();
 		}
 
 		private void pictureBox1_Click(object sender, EventArgs e)
 		{
-			currentChildForm.Close();
+			try
+			{
+				currentChildForm.Close();
+			}
+			catch
+			{
+
+			}
+
 			Reset();
 		}
 	}

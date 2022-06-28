@@ -52,6 +52,7 @@ namespace NovGorAdmin
 			this.panelLogo = new System.Windows.Forms.Panel();
 			this.label1 = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.iconButton3 = new FontAwesome.Sharp.IconButton();
 			this.panelDesktop.SuspendLayout();
 			this.panelTitleBar.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -254,6 +255,7 @@ namespace NovGorAdmin
 			// panelMenu
 			// 
 			this.panelMenu.BackColor = System.Drawing.Color.SeaGreen;
+			this.panelMenu.Controls.Add(this.iconButton3);
 			this.panelMenu.Controls.Add(this.iconButton2);
 			this.panelMenu.Controls.Add(this.iconButton1);
 			this.panelMenu.Controls.Add(this.panelLogo);
@@ -341,6 +343,28 @@ namespace NovGorAdmin
 			this.pictureBox1.TabStop = false;
 			this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
 			// 
+			// iconButton3
+			// 
+			this.iconButton3.Dock = System.Windows.Forms.DockStyle.Top;
+			this.iconButton3.FlatAppearance.BorderSize = 0;
+			this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.iconButton3.ForeColor = System.Drawing.Color.Gainsboro;
+			this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Laptop;
+			this.iconButton3.IconColor = System.Drawing.Color.Gainsboro;
+			this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.iconButton3.IconSize = 32;
+			this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.iconButton3.Location = new System.Drawing.Point(0, 281);
+			this.iconButton3.Name = "iconButton3";
+			this.iconButton3.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+			this.iconButton3.Size = new System.Drawing.Size(258, 60);
+			this.iconButton3.TabIndex = 2;
+			this.iconButton3.Text = " Как\r\n пользоваться?";
+			this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.iconButton3.UseVisualStyleBackColor = true;
+			this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -396,6 +420,7 @@ namespace NovGorAdmin
 		private System.Windows.Forms.TextBox tbxPass;
 		private System.Windows.Forms.Label label2;
 		private FontAwesome.Sharp.IconButton iconButton2;
+		private FontAwesome.Sharp.IconButton iconButton3;
 	}
 }
 

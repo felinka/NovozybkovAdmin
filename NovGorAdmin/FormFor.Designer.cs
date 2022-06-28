@@ -209,7 +209,7 @@ namespace NovGorAdmin
 			this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panelTitleBar.Location = new System.Drawing.Point(251, 0);
 			this.panelTitleBar.Name = "panelTitleBar";
-			this.panelTitleBar.Size = new System.Drawing.Size(1349, 80);
+			this.panelTitleBar.Size = new System.Drawing.Size(1425, 80);
 			this.panelTitleBar.TabIndex = 2;
 			this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
 			// 
@@ -274,7 +274,7 @@ namespace NovGorAdmin
 			this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panelShadow.Location = new System.Drawing.Point(251, 80);
 			this.panelShadow.Name = "panelShadow";
-			this.panelShadow.Size = new System.Drawing.Size(1349, 5);
+			this.panelShadow.Size = new System.Drawing.Size(1425, 5);
 			this.panelShadow.TabIndex = 3;
 			// 
 			// panelDesktop
@@ -288,7 +288,7 @@ namespace NovGorAdmin
 			this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panelDesktop.Location = new System.Drawing.Point(251, 85);
 			this.panelDesktop.Name = "panelDesktop";
-			this.panelDesktop.Size = new System.Drawing.Size(1349, 744);
+			this.panelDesktop.Size = new System.Drawing.Size(1425, 744);
 			this.panelDesktop.TabIndex = 4;
 			// 
 			// lblT
@@ -352,7 +352,7 @@ namespace NovGorAdmin
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.SeaGreen;
-			this.ClientSize = new System.Drawing.Size(1600, 829);
+			this.ClientSize = new System.Drawing.Size(1676, 829);
 			this.Controls.Add(this.panelDesktop);
 			this.Controls.Add(this.panelShadow);
 			this.Controls.Add(this.panelTitleBar);

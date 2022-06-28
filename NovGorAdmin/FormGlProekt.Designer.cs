@@ -32,6 +32,8 @@ namespace NovGorAdmin
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGlProekt));
 			this.panelDesktop = new System.Windows.Forms.Panel();
+			this.lblT = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
 			this.lblID = new System.Windows.Forms.Label();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.panel1 = new System.Windows.Forms.Panel();
@@ -50,8 +52,6 @@ namespace NovGorAdmin
 			this.label1 = new System.Windows.Forms.Label();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
-			this.lblT = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
 			this.panelDesktop.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			this.panelTitleBar.SuspendLayout();
@@ -74,8 +74,29 @@ namespace NovGorAdmin
 			this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panelDesktop.Location = new System.Drawing.Point(251, 85);
 			this.panelDesktop.Name = "panelDesktop";
-			this.panelDesktop.Size = new System.Drawing.Size(1354, 699);
+			this.panelDesktop.Size = new System.Drawing.Size(1354, 729);
 			this.panelDesktop.TabIndex = 8;
+			// 
+			// lblT
+			// 
+			this.lblT.AutoSize = true;
+			this.lblT.Font = new System.Drawing.Font("Comic Sans MS", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblT.ForeColor = System.Drawing.Color.Olive;
+			this.lblT.Location = new System.Drawing.Point(504, 336);
+			this.lblT.Name = "lblT";
+			this.lblT.Size = new System.Drawing.Size(0, 60);
+			this.lblT.TabIndex = 15;
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("Comic Sans MS", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+			this.label3.Location = new System.Drawing.Point(249, 336);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(195, 60);
+			this.label3.TabIndex = 14;
+			this.label3.Text = "Сейчас: ";
 			// 
 			// lblID
 			// 
@@ -104,7 +125,7 @@ namespace NovGorAdmin
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel1.Location = new System.Drawing.Point(0, 0);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(5, 699);
+			this.panel1.Size = new System.Drawing.Size(5, 729);
 			this.panel1.TabIndex = 4;
 			// 
 			// panelShadow
@@ -196,7 +217,7 @@ namespace NovGorAdmin
 			this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panelMenu.Location = new System.Drawing.Point(0, 0);
 			this.panelMenu.Name = "panelMenu";
-			this.panelMenu.Size = new System.Drawing.Size(251, 784);
+			this.panelMenu.Size = new System.Drawing.Size(251, 814);
 			this.panelMenu.TabIndex = 5;
 			// 
 			// iconButton4
@@ -325,32 +346,11 @@ namespace NovGorAdmin
 			this.timer1.Interval = 1000;
 			this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
 			// 
-			// lblT
-			// 
-			this.lblT.AutoSize = true;
-			this.lblT.Font = new System.Drawing.Font("Comic Sans MS", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblT.ForeColor = System.Drawing.Color.Olive;
-			this.lblT.Location = new System.Drawing.Point(504, 336);
-			this.lblT.Name = "lblT";
-			this.lblT.Size = new System.Drawing.Size(0, 61);
-			this.lblT.TabIndex = 15;
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Font = new System.Drawing.Font("Comic Sans MS", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-			this.label3.Location = new System.Drawing.Point(249, 336);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(201, 61);
-			this.label3.TabIndex = 14;
-			this.label3.Text = "Сейчас: ";
-			// 
 			// FormGlProekt
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1605, 784);
+			this.ClientSize = new System.Drawing.Size(1605, 814);
 			this.Controls.Add(this.panelDesktop);
 			this.Controls.Add(this.panelShadow);
 			this.Controls.Add(this.panelTitleBar);

@@ -47,10 +47,12 @@ namespace NovGorAdmin
 			{
 				btnUvol.Visible = true;
 			}
+			lblFi.Text = lblFIO.Text + " " + lblName.Text + " " + lblOtch.Text;
 		}
 		void Upd()
 		{
 			bsUsers.Filter = "IdUser = " + LstIdUsers[currentProf];
+			lblFi.Text = lblFIO.Text + " " + lblName.Text + " " + lblOtch.Text;
 		}
 		private void btnNext_Click(object sender, EventArgs e)
 		{

@@ -254,7 +254,7 @@ namespace NovGorAdmin
 			this.lblIdU.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsUsers, "IdUser", true));
 			this.lblIdU.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblIdU.ForeColor = System.Drawing.Color.Olive;
-			this.lblIdU.Location = new System.Drawing.Point(1303, 23);
+			this.lblIdU.Location = new System.Drawing.Point(1272, 41);
 			this.lblIdU.Name = "lblIdU";
 			this.lblIdU.Size = new System.Drawing.Size(0, 28);
 			this.lblIdU.TabIndex = 26;
@@ -290,7 +290,7 @@ namespace NovGorAdmin
 			this.label1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsUsers, "Dolzhn", true));
 			this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.ForeColor = System.Drawing.Color.Olive;
-			this.label1.Location = new System.Drawing.Point(228, 114);
+			this.label1.Location = new System.Drawing.Point(228, 126);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(774, 28);
 			this.label1.TabIndex = 23;

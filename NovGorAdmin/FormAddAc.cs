@@ -96,7 +96,7 @@ Where ListUsers.IdUser = " + tbxIdUs.Text;
 			string Dolzh = cbxDolzh.SelectedIndex.ToString();
 			
 
-				string TxtQuery = $@"Insert into LogUsers (IdUser, LoginU, PassU, BoolWork, Dolzh) Values ({tbxIdUs.Text}, '{tbxLoginU.Text}', '{tbxPassU.Text}', 1, {Dolzh})" ;
+				string TxtQuery = $@"Insert into LogUsers (IdUser, LoginU, PassU, BoolWork, Dolzh, Email) Values ({tbxIdUs.Text}, '{tbxLoginU.Text}', '{tbxPassU.Text}', 1, {Dolzh}, '{textBox1.Text}')" ;
 			SqlConnection Con = new SqlConnection(Form1.TxtCon);
 			Con.Open();
 			SqlCommand Quey1 = new SqlCommand(TxtQuery, Con);

@@ -56,35 +56,44 @@ namespace NovGorAdmin
 					
 					string ID = Res["IdUser"].ToString();
 					Con.Close();
-					MailAddress fromAdress = new MailAddress("novozybkovadm@mail.ru", "Новозыбковская городская администрация");
+					try
+					{
 
-					MailAddress toAdress = new MailAddress(tbxM.Text);
-					Random rnd = new Random();
-					string ePass = rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString();
 
-					TxtQuery = $@"Update LogUsers set ePass ='{ePass}' , DateOfLogin = GETDATE() where IdUser = {ID}";
-					Con.Open();
-					SqlCommand Quey11 = new SqlCommand(TxtQuery, Con);
-					Quey11.ExecuteNonQuery();
-					Con.Close();
+						MailAddress fromAdress = new MailAddress("novozybkovadm@mail.ru", "Новозыбковская городская администрация");
 
-					MailMessage mess = new MailMessage(fromAdress, toAdress);
-					mess.Body = $"Ваш код для восстановления доступа: {ePass}";
-					mess.Subject = $"Восстановление доступа в программу";
+						MailAddress toAdress = new MailAddress(tbxM.Text);
+						Random rnd = new Random();
+						string ePass = rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString() + rnd.Next(1, 10).ToString();
 
-					SmtpClient client = new SmtpClient();
-					client.Host = "smtp.mail.ru";
-					client.Port = 587; // Обратите внимание что порт 587
-					client.EnableSsl = true;
-					client.Credentials = new NetworkCredential("novozybkovadm@mail.ru", "Eq9lC4YbGlJdGM2xdCpT");
+						TxtQuery = $@"Update LogUsers set ePass ='{ePass}' , DateOfLogin = GETDATE() where IdUser = {ID}";
+						Con.Open();
+						SqlCommand Quey11 = new SqlCommand(TxtQuery, Con);
+						Quey11.ExecuteNonQuery();
+						Con.Close();
 
-					client.Send(mess);
+						MailMessage mess = new MailMessage(fromAdress, toAdress);
+						mess.Body = $"Ваш код для восстановления доступа: {ePass}";
+						mess.Subject = $"Восстановление доступа в программу";
 
-					MessageBox.Show($"Сообщение отправлено. Если не видите его, проверьте папку Спам. \n Введите код в появившееся поле.");
+						SmtpClient client = new SmtpClient();
+						client.Host = "smtp.mail.ru";
+						client.Port = 587; // Обратите внимание что порт 587
+						client.EnableSsl = true;
+						client.Credentials = new NetworkCredential("novozybkovadm@mail.ru", "Eq9lC4YbGlJdGM2xdCpT");
 
-					f = true;
-					tbxK.Visible = true;
-					lblK.Visible = true;
+						client.Send(mess);
+
+						MessageBox.Show($"Сообщение отправлено. Если не видите его, проверьте папку Спам. \n Введите код в появившееся поле.");
+
+						f = true;
+						tbxK.Visible = true;
+						lblK.Visible = true;
+					}
+					catch
+					{
+						MessageBox.Show($"Произошла неизвестная ошибка. Код: FHL1ErMail. Сообщите об этом программисту.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
 				}
 				else 
 				{
@@ -144,25 +153,32 @@ namespace NovGorAdmin
 
 						b = $"Ваш новый логин: {s}";
 					}
-					
+					try
+					{
 
 
-					MailAddress fromAdress = new MailAddress("novozybkovadm@mail.ru", "Новозыбковская городская администрация");
-					MailAddress toAdress = new MailAddress(tbxM.Text);
 
-					MailMessage mess = new MailMessage(fromAdress, toAdress);
-					mess.Body =b;
-					mess.Subject = $"Восстановление доступа в программу";
+						MailAddress fromAdress = new MailAddress("novozybkovadm@mail.ru", "Новозыбковская городская администрация");
+						MailAddress toAdress = new MailAddress(tbxM.Text);
 
-					SmtpClient client = new SmtpClient();
-					client.Host = "smtp.mail.ru";
-					client.Port = 587; // Обратите внимание что порт 587
-					client.EnableSsl = true;
-					client.Credentials = new NetworkCredential("novozybkovadm@mail.ru", "Eq9lC4YbGlJdGM2xdCpT");
+						MailMessage mess = new MailMessage(fromAdress, toAdress);
+						mess.Body = b;
+						mess.Subject = $"Восстановление доступа в программу";
 
-					client.Send(mess);
+						SmtpClient client = new SmtpClient();
+						client.Host = "smtp.mail.ru";
+						client.Port = 587; // Обратите внимание что порт 587
+						client.EnableSsl = true;
+						client.Credentials = new NetworkCredential("novozybkovadm@mail.ru", "Eq9lC4YbGlJdGM2xdCpT");
 
-					MessageBox.Show($"Ваш новый логин/пароль выслан на e-mail.");
+						client.Send(mess);
+
+						MessageBox.Show($"Ваш новый логин/пароль выслан на e-mail.");
+					}
+					catch
+					{
+						MessageBox.Show($"Упс, мы сломались. \r\nКод: FHL2ErMail. Сообщите об этом программисту.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
 				}
 				else
 				{

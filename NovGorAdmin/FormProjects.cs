@@ -254,6 +254,17 @@ namespace NovGorAdmin
 				}
 				else
 				{
+
+					try
+					{
+						int c = int.Parse(tbxText.Text);
+					}
+					catch
+					{
+						MessageBox.Show($"В поле нужно вводить только одно ЧИСЛОВОЕ значение.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						return;
+					}
+
 					if(!LstId.Contains(tbxText.Text))
 					{
 						MessageBox.Show($"Идеи проекта с таким номером нет. \nПожалуйста, проверьте и введите номер снова.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
